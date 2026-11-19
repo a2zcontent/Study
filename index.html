@@ -60,7 +60,7 @@
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
           <div class="lg:col-span-6 lg:order-2">
             <div class="rounded-2xl overflow-hidden bg-white shadow-[0_14px_40px_-14px_rgba(11,27,52,0.16)] border border-emerald-100">
-              <img src="https://ais-pre-m6mvzvhtosj2y5m3u7ljyd-632893858839.asia-east1.run.app/assets/studysphere/hero_pack.jpg" alt="StudySphere Complete Class 12 CBSE Handwritten Notes Pack" referrerpolicy="no-referrer" class="w-full h-auto object-cover block" />
+              <img src="https://inkwise-exam-notes.lovable.app/__l5e/assets-v1/039c8683-b0bd-483d-9190-bd781d4b02e4/study-pack-books-bundle.png" alt="StudySphere Complete Class 12 CBSE Handwritten Notes Pack" referrerpolicy="no-referrer" class="w-full h-auto object-cover block" />
             </div>
             <div class="mt-3 flex items-center justify-between text-xs font-medium text-slate-500 px-1">
               <span>2026–27 Academic Edition</span>
@@ -150,7 +150,7 @@
           <h2 class="font-display text-3xl sm:text-4xl font-extrabold text-[#0B1B34] tracking-tight">What Students Say About Our Study Pack</h2>
         </div>
         <div class="mt-8 max-w-2xl mx-auto">
-          <img src="https://ais-pre-m6mvzvhtosj2y5m3u7ljyd-632893858839.asia-east1.run.app/assets/studysphere/reviews_books_fan.jpg" alt="StudySphere 5-subject Class 12 handwritten notes set" referrerpolicy="no-referrer" class="w-full h-auto rounded-2xl block" />
+          <img src="https://inkwise-exam-notes.lovable.app/__l5e/assets-v1/e8267da3-e071-4c52-ab46-7800e50d50aa/study-pack-subject-books.png" alt="StudySphere 5-subject Class 12 handwritten notes set" referrerpolicy="no-referrer" class="w-full h-auto rounded-2xl block" />
         </div>
         <div class="mt-8 grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
           <div class="lg:col-span-4 rounded-2xl bg-white border border-slate-200 p-6 shadow-xs text-center space-y-4">
@@ -288,7 +288,15 @@
   </div>
 
   <script>
-    const ASSET_BASE = 'https://ais-pre-m6mvzvhtosj2y5m3u7ljyd-632893858839.asia-east1.run.app/assets/studysphere';
+    const IMG = {
+      hero: 'https://inkwise-exam-notes.lovable.app/__l5e/assets-v1/039c8683-b0bd-483d-9190-bd781d4b02e4/study-pack-books-bundle.png',
+      books: 'https://inkwise-exam-notes.lovable.app/__l5e/assets-v1/e8267da3-e071-4c52-ab46-7800e50d50aa/study-pack-subject-books.png',
+      physics: 'https://inkwise-exam-notes.lovable.app/__l5e/assets-v1/a78f11be-8d53-4f35-88b0-76c91f7cea79/physics-electrostatic-potential-capacitance.webp',
+      chemistry: 'https://inkwise-exam-notes.lovable.app/__l5e/assets-v1/f8d8cb29-ac47-4dde-8793-c128793d61f5/chemistry-chemical-kinetics.webp',
+      mathematics: 'https://inkwise-exam-notes.lovable.app/__l5e/assets-v1/d8e8f174-6060-46d5-8d2e-c79a24c0a83b/maths-differential-equations.png',
+      biology: 'https://inkwise-exam-notes.lovable.app/__l5e/assets-v1/75f2c225-2054-4cac-a875-007387d6603e/biology-reproductive-health-page-1.webp',
+      english: 'https://inkwise-exam-notes.lovable.app/__l5e/assets-v1/a4da28f1-ced0-4380-994b-0f70ae7c47e7/english-the-last-lesson.png'
+    };
     const BASE_PRICE = 140, BASE_MRP = 999, PYQ_PRICE = 49, PYQ_MRP = 299;
 
     const DEFAULT_SETTINGS = {
@@ -306,11 +314,11 @@
     const ALL_EXAMS = ['CBSE Class 12', 'JEE Main', 'JEE Advanced', 'NEET UG', 'BITSAT', 'CUET UG', 'IISER IAT', 'NDA', 'Other Competitive Exams'];
 
     const SUBJECTS = [
-      { id: 'physics', name: 'Physics', icon: '⚛', subtitle: 'Concepts, formulas & derivations', chapter: 'Electrostatic Potential & Capacitance', img: ASSET_BASE + '/sample_physics.jpg', exams: ALL_EXAMS },
-      { id: 'chemistry', name: 'Chemistry', icon: '⚗', subtitle: 'Physical, organic & inorganic', chapter: 'Chemical Kinetics', img: ASSET_BASE + '/sample_chemistry.jpg', exams: ALL_EXAMS },
-      { id: 'mathematics', name: 'Mathematics', icon: 'Σ', subtitle: 'Theorems, methods & solved steps', chapter: 'Differential Equations — Order & Degree', img: ASSET_BASE + '/sample_maths.jpg', exams: ['CBSE Class 12', 'JEE Main', 'JEE Advanced', 'BITSAT', 'CUET UG', 'IISER IAT', 'NDA', 'Other Competitive Exams'] },
-      { id: 'biology', name: 'Biology', icon: '🌿', subtitle: 'Clear diagrams & key points', chapter: 'Reproductive Health', img: ASSET_BASE + '/sample_biology.jpg', exams: ['CBSE Class 12', 'NEET UG', 'CUET UG', 'IISER IAT', 'Other Competitive Exams'] },
-      { id: 'english', name: 'English', icon: '📖', subtitle: 'Literature & writing skills', chapter: 'The Last Lesson — Flamingo Ch. 1', img: ASSET_BASE + '/sample_english.jpg', exams: ['CBSE Class 12', 'CUET UG', 'NDA', 'Other Competitive Exams'] }
+      { id: 'physics', name: 'Physics', icon: '⚛', subtitle: 'Concepts, formulas & derivations', chapter: 'Electrostatic Potential & Capacitance', img: IMG.physics, exams: ALL_EXAMS },
+      { id: 'chemistry', name: 'Chemistry', icon: '⚗', subtitle: 'Physical, organic & inorganic', chapter: 'Chemical Kinetics', img: IMG.chemistry, exams: ALL_EXAMS },
+      { id: 'mathematics', name: 'Mathematics', icon: 'Σ', subtitle: 'Theorems, methods & solved steps', chapter: 'Differential Equations — Order & Degree', img: IMG.mathematics, exams: ['CBSE Class 12', 'JEE Main', 'JEE Advanced', 'BITSAT', 'CUET UG', 'IISER IAT', 'NDA', 'Other Competitive Exams'] },
+      { id: 'biology', name: 'Biology', icon: '🌿', subtitle: 'Clear diagrams & key points', chapter: 'Reproductive Health', img: IMG.biology, exams: ['CBSE Class 12', 'NEET UG', 'CUET UG', 'IISER IAT', 'Other Competitive Exams'] },
+      { id: 'english', name: 'English', icon: '📖', subtitle: 'Literature & writing skills', chapter: 'The Last Lesson — Flamingo Ch. 1', img: IMG.english, exams: ['CBSE Class 12', 'CUET UG', 'NDA', 'Other Competitive Exams'] }
     ];
 
     const REVIEWS = [
@@ -591,7 +599,7 @@
           <div class="flex items-center justify-between px-5 py-4 border-b border-slate-200"><span class="text-sm font-extrabold tracking-wide text-[#0B1B34]">DIRECT UPI PAYMENT</span><button type="button" onclick="closeCheckout()" class="px-2 py-1 rounded-lg text-slate-500 hover:bg-slate-100 font-bold cursor-pointer">✕</button></div>
           <div class="overflow-y-auto flex-1 px-5 py-4 space-y-4">
             <div class="flex items-center gap-3 p-3 rounded-xl bg-slate-50 border border-slate-200">
-              <img src="${ASSET_BASE}/checkout_banner.jpg" alt="Study Pack" class="w-20 h-14 rounded-lg object-cover shrink-0 border border-slate-200" />
+              <img src="${IMG.hero}" alt="Study Pack" referrerpolicy="no-referrer" class="w-20 h-14 rounded-lg object-cover shrink-0 border border-slate-200" />
               <div class="min-w-0"><p class="text-sm font-bold text-[#0B1B34] leading-snug">CBSE Class 12, CUET, JEE &amp; NEET Notes 2026–27</p><p class="text-xs font-extrabold text-[#0E9F57] mt-0.5">₹140 <span class="text-slate-400 line-through font-normal">₹999</span> · 5 Subjects PDF</p></div>
             </div>
             <div class="space-y-1.5">
@@ -600,7 +608,7 @@
               <p id="coPhoneErr" class="hidden text-xs font-medium text-red-600"></p>
             </div>
             <div onclick="state.includePyq=!state.includePyq;renderCheckout()" class="rounded-xl border p-3.5 cursor-pointer ${state.includePyq ? 'border-[#0E9F57] bg-[#EEFBF3]/60' : 'border-slate-200 bg-white'}">
-              <div class="flex items-start gap-3"><img src="${ASSET_BASE}/pyq_addon.jpg" alt="PYQ Bundle" class="w-20 h-14 rounded-lg object-cover shrink-0 border border-slate-200" /><div class="min-w-0 flex-1"><p class="text-xs sm:text-sm font-bold text-[#0B1B34]">Class 12 + NEET + JEE PYQ Bundle — Only ₹49!</p><p class="text-[11px] text-slate-600 mt-0.5">Add Previous Year Questions (PYQ) Bundle for extra exam practice.</p></div></div>
+              <div class="flex items-start gap-3"><img src="${IMG.books}" alt="PYQ Bundle" referrerpolicy="no-referrer" class="w-20 h-14 rounded-lg object-cover shrink-0 border border-slate-200" /><div class="min-w-0 flex-1"><p class="text-xs sm:text-sm font-bold text-[#0B1B34]">Class 12 + NEET + JEE PYQ Bundle — Only ₹49!</p><p class="text-[11px] text-slate-600 mt-0.5">Add Previous Year Questions (PYQ) Bundle for extra exam practice.</p></div></div>
               <div class="flex items-center justify-between mt-2.5 pt-2.5 border-t border-slate-200"><span class="text-sm font-bold text-[#0B1B34]">+₹49 <span class="text-xs text-slate-400 line-through">₹299</span></span><span class="px-3 py-1 rounded-lg border border-slate-300 bg-white text-xs font-bold">${state.includePyq ? '✓ ADDED' : '+ ADD THIS ALSO'}</span></div>
             </div>
             <div class="flex items-center justify-between px-4 py-3 rounded-xl bg-[#0B1B34] text-white">
