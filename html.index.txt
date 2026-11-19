@@ -1,0 +1,798 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>StudySphere — Complete Class 12, CUET, JEE &amp; NEET Handwritten Notes | ₹140 Flash Sale</title>
+  <meta name="description" content="Complete Handwritten Study Notes for CBSE Class 12, CUET, JEE Main, JEE Advanced &amp; NEET UG (2026–27). Flash Sale ₹140 Only (MRP ₹999, 86% OFF). Direct PhonePe, Google Pay, Paytm &amp; UPI QR payment with instant Google Drive access." />
+  <meta name="theme-color" content="#0E9F57" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500;600;700&family=Outfit:wght@600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    body { font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif; color: #0B1B34; }
+    .font-display { font-family: 'Outfit', 'Plus Jakarta Sans', system-ui, sans-serif; }
+    .font-mono { font-family: 'IBM Plex Mono', ui-monospace, monospace; }
+    .hero-mint-wash { background: linear-gradient(180deg, #E8FAEF 0%, #F5FDF8 45%, #FFFFFF 100%); }
+    .score-highlight { position: relative; display: inline-block; color: #0E9F57; }
+    .score-highlight::after { content: ''; position: absolute; left: -2px; right: -2px; bottom: 4px; height: 10px; background: rgba(14, 159, 87, 0.18); border-radius: 4px; z-index: -1; }
+    .no-scrollbar::-webkit-scrollbar { display: none; }
+    .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    @keyframes slideUpToast { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
+    .toast-enter { animation: slideUpToast 0.28s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+  </style>
+</head>
+<body class="bg-white text-[#0B1B34] antialiased pb-24">
+
+  <!-- Flash Sale Countdown Strip -->
+  <div id="flashBanner" class="bg-[#0B1B34] text-white text-xs py-2 px-4">
+    <div class="max-w-6xl mx-auto flex items-center justify-between gap-3">
+      <div class="flex-1 flex items-center justify-center gap-2 sm:gap-3 min-w-0">
+        <span class="font-extrabold text-[#FACC15] whitespace-nowrap shrink-0">FLASH SALE 86% OFF</span>
+        <span id="flashTimerTop" class="font-mono tabular-nums bg-white/15 px-2 py-0.5 rounded text-[11px] font-bold whitespace-nowrap shrink-0">02:14:48</span>
+        <span class="hidden sm:inline truncate text-slate-200">Complete Study Pack MRP ₹999 → ₹140 Only · Instant Google Drive PDF</span>
+      </div>
+      <button type="button" onclick="document.getElementById('flashBanner').remove()" aria-label="Close flash banner" class="text-slate-300 hover:text-white font-bold px-1 cursor-pointer shrink-0">✕</button>
+    </div>
+  </div>
+
+  <!-- Top Navigation -->
+  <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-slate-100">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between gap-8">
+      <a href="#top" class="font-display text-xl sm:text-2xl font-extrabold tracking-tight text-[#0B1B34] whitespace-nowrap shrink-0">Study<span class="text-[#0E9F57]">Sphere</span></a>
+      <nav aria-label="Primary navigation" class="hidden md:flex items-center gap-7 text-sm font-semibold text-slate-600">
+        <a href="#subjects" class="hover:text-[#0B1B34] transition-colors whitespace-nowrap">Subjects</a>
+        <a href="#samples" class="hover:text-[#0B1B34] transition-colors whitespace-nowrap">Samples</a>
+        <a href="#reviews" class="hover:text-[#0B1B34] transition-colors whitespace-nowrap">Reviews</a>
+        <a href="#faq" class="hover:text-[#0B1B34] transition-colors whitespace-nowrap">FAQ</a>
+      </nav>
+      <button type="button" onclick="openCheckout()" class="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-[#0E9F57] hover:bg-[#0A8447] text-white text-xs sm:text-sm font-bold transition-colors whitespace-nowrap shrink-0 cursor-pointer">
+        <span>Buy Pack</span><span class="tabular-nums">₹140</span>
+      </button>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- HERO SECTION -->
+    <section class="hero-mint-wash pt-6 pb-10 sm:pt-10 sm:pb-16">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+          <div class="lg:col-span-6 lg:order-2">
+            <div class="rounded-2xl overflow-hidden bg-white shadow-[0_14px_40px_-14px_rgba(11,27,52,0.16)] border border-emerald-100">
+              <img src="https://ais-pre-m6mvzvhtosj2y5m3u7ljyd-632893858839.asia-east1.run.app/assets/studysphere/hero_pack.jpg" alt="StudySphere Complete Class 12 CBSE Handwritten Notes Pack" referrerpolicy="no-referrer" class="w-full h-auto object-cover block" />
+            </div>
+            <div class="mt-3 flex items-center justify-between text-xs font-medium text-slate-500 px-1">
+              <span>2026–27 Academic Edition</span>
+              <span>English Medium · 5 Core Subjects</span>
+            </div>
+          </div>
+
+          <div class="lg:col-span-6 lg:order-1 space-y-5">
+            <div id="heroExamsRow" class="flex flex-wrap items-center gap-2"></div>
+            <h1 class="font-display text-4xl sm:text-5xl font-extrabold tracking-tight text-[#0B1B34] leading-[1.1]">
+              Prepare Smarter.<br />Revise Better. <span class="score-highlight">Score Higher!</span>
+            </h1>
+            <p class="text-base sm:text-lg text-slate-600 leading-relaxed max-w-xl">
+              Complete Handwritten Study Notes for CBSE Class 12, CUET, JEE Main &amp; JEE Advanced — 2026–27.
+            </p>
+            <div id="heroSubjectsRow" class="flex flex-wrap items-center gap-2"></div>
+
+            <div class="rounded-2xl bg-white border border-slate-200/90 shadow-[0_10px_30px_-12px_rgba(11,27,52,0.1)] p-5 sm:p-6 space-y-4">
+              <div class="flex items-center justify-between gap-3 flex-wrap">
+                <div class="flex items-center gap-3.5">
+                  <span class="font-display text-4xl sm:text-5xl font-extrabold text-[#0E9F57] tabular-nums tracking-tight">₹140</span>
+                  <div class="flex flex-col">
+                    <span class="text-base font-semibold text-slate-400 line-through tabular-nums leading-tight">₹999</span>
+                    <span class="text-xs font-extrabold text-amber-800 bg-amber-100 px-2 py-0.5 rounded-md mt-0.5 w-fit">86% OFF</span>
+                  </div>
+                </div>
+                <div class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-amber-50 border border-amber-200 text-xs font-bold text-amber-900">
+                  <span>Flash Sale:</span>
+                  <span id="flashTimerHero" class="font-mono tabular-nums">02:14:48</span>
+                </div>
+              </div>
+              <button type="button" onclick="openCheckout()" class="w-full py-4 px-6 rounded-xl bg-[#0E9F57] hover:bg-[#0A8447] text-white font-extrabold text-base tracking-wide flex items-center justify-center gap-2 shadow-[0_10px_24px_-8px_rgba(14,159,87,0.55)] transition-all cursor-pointer">
+                <span>BUY NOW</span><span>→</span>
+              </button>
+              <div class="flex items-center justify-center gap-4 text-xs font-semibold text-slate-600 pt-0.5">
+                <span>Instant Digital Access</span><span class="text-slate-300">·</span><span>Direct UPI &amp; QR Payment</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="mt-10 pt-6 border-t border-emerald-200/60 text-center">
+          <p class="text-xs sm:text-sm font-extrabold tracking-[0.14em] text-[#0B1B34]">CRAFTED BY INDIA'S BEST TEACHERS</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHAT YOU GET -->
+    <section id="subjects" class="py-14 sm:py-20 bg-white">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6">
+        <div class="text-center max-w-2xl mx-auto space-y-3">
+          <p class="text-xs font-bold tracking-[0.18em] text-[#0E9F57]">WHAT YOU GET</p>
+          <h2 class="font-display text-3xl sm:text-4xl font-extrabold text-[#0B1B34] tracking-tight">Everything You Need In One Study Pack</h2>
+          <p class="text-sm sm:text-base text-slate-600">Organized handwritten PDF study material for your exam preparation — made for:</p>
+        </div>
+        <div id="examFilterRow" class="mt-6 flex flex-wrap items-center justify-center gap-2 max-w-3xl mx-auto"></div>
+        <div id="subjectsGrid" class="mt-9 grid grid-cols-2 lg:grid-cols-5 gap-3.5 sm:gap-5"></div>
+      </div>
+    </section>
+
+    <!-- REAL SAMPLES -->
+    <section id="samples" class="py-14 sm:py-20 bg-[#F3F8FD] border-y border-slate-100">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6">
+        <div class="text-center max-w-2xl mx-auto space-y-3">
+          <p class="text-xs font-bold tracking-[0.18em] text-[#0E9F57]">REAL SAMPLES</p>
+          <h2 class="font-display text-3xl sm:text-4xl font-extrabold text-[#0B1B34] tracking-tight">See the Quality Before You Buy</h2>
+          <p class="text-sm sm:text-base text-slate-600">Tap any page to enlarge and inspect the handwriting.</p>
+        </div>
+        <div id="samplesGrid" class="mt-9 grid grid-cols-2 lg:grid-cols-5 gap-3.5 sm:gap-5"></div>
+
+        <div class="mt-14 max-w-xl mx-auto">
+          <div class="rounded-[28px] bg-white border-2 border-[#0B1B34] shadow-[8px_8px_0px_#0E9F57] overflow-hidden divide-y divide-slate-200">
+            <div class="flex items-center justify-center sm:justify-start sm:pl-16 gap-4 py-5 px-6"><div class="w-11 h-11 rounded-full bg-[#0B1B34] text-white font-bold text-sm flex items-center justify-center shrink-0">Aअ</div><span class="font-display text-lg sm:text-xl font-bold text-[#0B1B34]">English Medium</span></div>
+            <div class="flex items-center justify-center sm:justify-start sm:pl-16 gap-4 py-5 px-6"><div class="w-11 h-11 rounded-full bg-[#0B1B34] text-white font-bold text-sm flex items-center justify-center shrink-0">☁</div><span class="font-display text-lg sm:text-xl font-bold text-[#0B1B34]">Google Drive</span></div>
+            <div class="flex items-center justify-center sm:justify-start sm:pl-16 gap-4 py-5 px-6"><div class="w-11 h-11 rounded-full bg-[#0B1B34] text-white font-bold text-sm flex items-center justify-center shrink-0">⚡</div><span class="font-display text-lg sm:text-xl font-bold text-[#0B1B34]">Instant Access</span></div>
+            <div class="flex items-center justify-center sm:justify-start sm:pl-16 gap-4 py-5 px-6"><div class="w-11 h-11 rounded-full bg-[#0B1B34] text-white font-bold text-xs flex items-center justify-center shrink-0">PDF</div><span class="font-display text-lg sm:text-xl font-bold text-[#0B1B34]">PDF FORMAT</span></div>
+            <div class="flex items-center justify-center sm:justify-start sm:pl-16 gap-4 py-5 px-6"><div class="w-11 h-11 rounded-full bg-[#0B1B34] text-white font-bold text-sm flex items-center justify-center shrink-0">↓</div><span class="font-display text-lg sm:text-xl font-bold text-[#0B1B34]">100% Downloadable</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- STUDENT REVIEWS -->
+    <section id="reviews" class="py-14 sm:py-20 bg-white">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6">
+        <div class="text-center max-w-2xl mx-auto space-y-3">
+          <p class="text-xs font-bold tracking-[0.18em] text-[#0E9F57]">STUDENT REVIEWS</p>
+          <h2 class="font-display text-3xl sm:text-4xl font-extrabold text-[#0B1B34] tracking-tight">What Students Say About Our Study Pack</h2>
+        </div>
+        <div class="mt-8 max-w-2xl mx-auto">
+          <img src="https://ais-pre-m6mvzvhtosj2y5m3u7ljyd-632893858839.asia-east1.run.app/assets/studysphere/reviews_books_fan.jpg" alt="StudySphere 5-subject Class 12 handwritten notes set" referrerpolicy="no-referrer" class="w-full h-auto rounded-2xl block" />
+        </div>
+        <div class="mt-8 grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+          <div class="lg:col-span-4 rounded-2xl bg-white border border-slate-200 p-6 shadow-xs text-center space-y-4">
+            <div>
+              <div class="font-display text-5xl font-extrabold text-[#0B1B34] tabular-nums">4.9<span class="text-2xl font-bold text-slate-400">/5</span></div>
+              <div class="text-[#0E9F57] text-lg tracking-widest mt-1">★★★★★</div>
+              <p class="text-sm font-medium text-slate-500 mt-1 tabular-nums">106 Reviews</p>
+            </div>
+            <div class="space-y-2.5 pt-3 border-t border-slate-100 text-xs">
+              <div class="flex items-center gap-3"><span class="font-bold text-[#0B1B34] w-8 text-left">5 ★</span><div class="flex-1 h-2.5 rounded-full bg-slate-100 overflow-hidden"><div class="h-full bg-[#0E9F57] rounded-full w-[91.5%]"></div></div><span class="text-slate-600 font-medium w-24 text-right tabular-nums">97 Five-Star</span></div>
+              <div class="flex items-center gap-3"><span class="font-bold text-[#0B1B34] w-8 text-left">4 ★</span><div class="flex-1 h-2.5 rounded-full bg-slate-100 overflow-hidden"><div class="h-full bg-[#0E9F57]/75 rounded-full w-[8.5%]"></div></div><span class="text-slate-600 font-medium w-24 text-right tabular-nums">9 Four-Star</span></div>
+            </div>
+          </div>
+          <div class="lg:col-span-8 space-y-4">
+            <div id="reviewsGrid" class="grid grid-cols-1 md:grid-cols-2 gap-3.5"></div>
+            <div class="flex justify-center">
+              <button id="toggleReviewsBtn" type="button" onclick="toggleAllReviews()" class="inline-flex items-center gap-2 px-6 py-3 rounded-xl border border-[#0B1B34] bg-white hover:bg-slate-50 text-sm font-bold text-[#0B1B34] transition-colors cursor-pointer">See All Reviews (106)</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="py-14 sm:py-20 bg-[#F3F8FD] border-t border-slate-100">
+      <div class="max-w-3xl mx-auto px-4 sm:px-6">
+        <div class="text-center space-y-3">
+          <p class="text-xs font-bold tracking-[0.18em] text-[#0E9F57]">GOT QUESTIONS?</p>
+          <h2 class="font-display text-3xl sm:text-4xl font-extrabold text-[#0B1B34] tracking-tight">Frequently Asked Questions</h2>
+        </div>
+        <div id="faqList" class="mt-9 space-y-3"></div>
+      </div>
+    </section>
+
+    <!-- FINAL CONVERSION CARD -->
+    <section class="py-12 sm:py-16 bg-white">
+      <div class="max-w-3xl mx-auto px-4 sm:px-6">
+        <div class="rounded-3xl bg-[#0B1B34] text-white px-6 py-10 sm:px-12 sm:py-12 text-center space-y-6 shadow-[0_24px_60px_-20px_rgba(11,27,52,0.45)]">
+          <p class="inline-block px-4 py-1.5 rounded-lg bg-[#FACC15] text-[#0B1B34] text-xs font-extrabold tracking-wider">COMPLETE STUDY PACK · 2026–27</p>
+          <h2 class="font-display text-3xl sm:text-4xl font-extrabold tracking-tight">Your Complete Study Pack for Just <span class="text-[#22C55E] tabular-nums">₹140!</span></h2>
+          <div class="flex items-center justify-center gap-3.5">
+            <span class="font-display text-5xl font-extrabold text-[#22C55E] tabular-nums">₹140</span>
+            <div class="text-left">
+              <div class="text-base font-semibold text-slate-400 line-through tabular-nums">₹999</div>
+              <div class="text-xs font-extrabold text-[#0B1B34] bg-[#F59E0B] px-2 py-0.5 rounded-md mt-0.5">86% OFF</div>
+            </div>
+          </div>
+          <div class="flex flex-wrap items-center justify-center gap-x-5 gap-y-2 max-w-lg mx-auto text-xs sm:text-sm font-medium text-slate-200">
+            <span>✓ Physics</span><span>✓ Chemistry</span><span>✓ Mathematics</span><span>✓ Biology</span><span>✓ English</span><span>✓ Digital PDF Format</span>
+          </div>
+          <div class="max-w-md mx-auto space-y-3 pt-1">
+            <button type="button" onclick="openCheckout()" class="w-full py-4 px-6 rounded-xl bg-[#0E9F57] hover:bg-[#12B76A] text-white font-extrabold text-base tracking-wide flex items-center justify-center gap-2 transition-colors cursor-pointer">
+              <span>BUY NOW</span><span>→</span>
+            </button>
+            <div class="flex items-center justify-center gap-4 text-xs font-medium text-slate-300">
+              <span>Instant Access</span><span>·</span><span>Direct UPI &amp; QR Payment</span>
+            </div>
+          </div>
+          <p class="font-display text-lg font-bold text-white/95">Start Your Preparation Today!</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="py-8 border-t border-slate-100 bg-white text-center text-xs text-slate-500">
+    <div class="max-w-6xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-4">
+      <span>© 2026 StudySphere · Digital PDF study material</span>
+      <span class="hidden sm:inline text-slate-300">·</span>
+      <button type="button" onclick="openAdminModal()" class="font-semibold text-slate-500 hover:text-[#0B1B34] underline underline-offset-2 cursor-pointer">Admin UTR Verify</button>
+    </div>
+  </footer>
+
+  <!-- LIVE RECENT BUYER TOAST -->
+  <aside id="liveBuyerToast" class="hidden toast-enter fixed left-3 sm:left-5 bottom-[74px] sm:bottom-[82px] z-30 max-w-[330px] bg-white border border-emerald-200 shadow-[0_14px_34px_-10px_rgba(11,27,52,0.22)] rounded-2xl p-3 flex items-start gap-3">
+    <div class="w-9 h-9 rounded-xl bg-[#EEFBF3] text-[#0E9F57] flex items-center justify-center shrink-0 mt-0.5 font-bold text-sm">✓</div>
+    <div class="min-w-0 flex-1">
+      <p id="toastNameCity" class="text-xs font-extrabold text-[#0B1B34] leading-snug"></p>
+      <p id="toastAction" class="text-xs text-slate-700 leading-snug mt-0.5"></p>
+      <p id="toastTime" class="text-[10px] font-bold text-[#0E9F57] mt-1"></p>
+    </div>
+    <button type="button" onclick="dismissBuyerToast()" aria-label="Close buyer toast" class="text-slate-400 hover:text-[#0B1B34] px-1 cursor-pointer">✕</button>
+  </aside>
+
+  <!-- STICKY BOTTOM BAR -->
+  <div class="fixed bottom-0 inset-x-0 z-30 bg-white/95 backdrop-blur-md border-t border-slate-200 shadow-[0_-6px_20px_-8px_rgba(11,27,52,0.12)]">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 py-2.5 flex items-center justify-between gap-4">
+      <div class="min-w-0">
+        <p class="text-xs font-semibold text-slate-600 truncate">Complete Study Pack</p>
+        <div class="flex items-baseline gap-2 tabular-nums">
+          <span class="font-display text-xl font-extrabold text-[#0E9F57]">₹140</span>
+          <span class="text-xs font-medium text-slate-400 line-through">₹999</span>
+        </div>
+      </div>
+      <button type="button" onclick="openCheckout()" class="flex-1 sm:flex-none sm:min-w-[220px] py-3 px-6 rounded-xl bg-[#0E9F57] hover:bg-[#0A8447] text-white font-extrabold text-sm tracking-wide inline-flex items-center justify-center gap-2 transition-colors whitespace-nowrap cursor-pointer">
+        <span>BUY NOW</span><span>→</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- SAMPLE ZOOM LIGHTBOX -->
+  <div id="sampleLightbox" class="hidden fixed inset-0 z-50 bg-[#0B1B34]/85 backdrop-blur-sm p-3 sm:p-6 flex items-center justify-center" onclick="closeSampleLightbox()">
+    <div class="w-full max-w-2xl max-h-[92vh] bg-white rounded-2xl overflow-hidden shadow-2xl flex flex-col" onclick="event.stopPropagation()">
+      <div class="flex items-center justify-between gap-3 px-4 py-3 border-b border-slate-100">
+        <div class="min-w-0">
+          <p id="lbSubject" class="text-xs font-semibold text-[#0E9F57]"></p>
+          <h3 id="lbChapter" class="text-sm sm:text-base font-bold text-[#0B1B34] truncate"></h3>
+        </div>
+        <div class="flex items-center gap-1.5 shrink-0">
+          <button type="button" onclick="changeZoom(-0.5)" class="px-2.5 py-1 rounded-lg bg-slate-100 text-xs font-bold text-[#0B1B34] cursor-pointer">−</button>
+          <span id="lbZoomLabel" class="text-xs font-mono font-bold w-10 text-center">100%</span>
+          <button type="button" onclick="changeZoom(0.5)" class="px-2.5 py-1 rounded-lg bg-slate-100 text-xs font-bold text-[#0B1B34] cursor-pointer">+</button>
+          <button type="button" onclick="closeSampleLightbox()" class="ml-1 px-2 py-1 rounded-lg text-slate-500 hover:bg-slate-100 font-bold cursor-pointer">✕</button>
+        </div>
+      </div>
+      <div id="lbTabs" class="flex items-center gap-1.5 px-4 py-2 bg-slate-50 border-b border-slate-100 overflow-x-auto no-scrollbar"></div>
+      <div class="flex-1 overflow-auto bg-slate-100 p-4 flex items-start justify-center min-h-[320px]">
+        <img id="lbImg" src="" alt="Sample handwritten page" referrerpolicy="no-referrer" class="w-full max-w-[440px] rounded-xl shadow-md border border-slate-200 bg-white transition-transform origin-top" />
+      </div>
+      <div class="px-4 py-3 border-t border-slate-100 bg-white flex items-center justify-between gap-3">
+        <span class="text-xs text-slate-600">All 5 Subjects Handwritten PDF</span>
+        <button type="button" onclick="closeSampleLightbox(); openCheckout();" class="px-5 py-2.5 rounded-xl bg-[#0E9F57] hover:bg-[#0A8447] text-white font-bold text-xs sm:text-sm cursor-pointer">Get All 5 Subjects — ₹140 →</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- DIRECT UPI + QR CHECKOUT MODAL -->
+  <div id="checkoutModal" class="hidden fixed inset-0 z-50 bg-[#0B1B34]/75 backdrop-blur-xs flex items-end sm:items-center justify-center sm:p-4" onclick="closeCheckout()">
+    <div id="checkoutCard" class="w-full sm:max-w-lg max-h-[94vh] bg-white rounded-t-2xl sm:rounded-2xl shadow-2xl overflow-hidden flex flex-col" onclick="event.stopPropagation()"></div>
+  </div>
+
+  <!-- ADMIN UTR VERIFICATION MODAL -->
+  <div id="adminModal" class="hidden fixed inset-0 z-50 bg-[#0B1B34]/80 backdrop-blur-xs flex items-end sm:items-center justify-center sm:p-4" onclick="closeAdminModal()">
+    <div id="adminCard" class="w-full sm:max-w-2xl max-h-[92vh] bg-white rounded-t-2xl sm:rounded-2xl shadow-2xl overflow-hidden flex flex-col" onclick="event.stopPropagation()"></div>
+  </div>
+
+  <script>
+    const ASSET_BASE = 'https://ais-pre-m6mvzvhtosj2y5m3u7ljyd-632893858839.asia-east1.run.app/assets/studysphere';
+    const BASE_PRICE = 140, BASE_MRP = 999, PYQ_PRICE = 49, PYQ_MRP = 299;
+
+    const DEFAULT_SETTINGS = {
+      upiId: 'paytmqr2810050501011dateishbh6t@paytm',
+      merchantName: 'StudySphere',
+      driveMainLink: 'https://drive.google.com/drive/folders/studysphere-class12-notes-2026',
+      drivePyqLink: 'https://drive.google.com/drive/folders/studysphere-pyq-bundle-2026',
+      adminPin: '1234',
+      ntfyTopic: 'Natori-mahar',
+      telegramBotToken: '',
+      telegramChatId: ''
+    };
+
+    const PRIMARY_EXAMS = ['CBSE CLASS 12', 'JEE MAIN', 'JEE ADVANCED', 'NEET UG'];
+    const ALL_EXAMS = ['CBSE Class 12', 'JEE Main', 'JEE Advanced', 'NEET UG', 'BITSAT', 'CUET UG', 'IISER IAT', 'NDA', 'Other Competitive Exams'];
+
+    const SUBJECTS = [
+      { id: 'physics', name: 'Physics', icon: '⚛', subtitle: 'Concepts, formulas & derivations', chapter: 'Electrostatic Potential & Capacitance', img: ASSET_BASE + '/sample_physics.jpg', exams: ALL_EXAMS },
+      { id: 'chemistry', name: 'Chemistry', icon: '⚗', subtitle: 'Physical, organic & inorganic', chapter: 'Chemical Kinetics', img: ASSET_BASE + '/sample_chemistry.jpg', exams: ALL_EXAMS },
+      { id: 'mathematics', name: 'Mathematics', icon: 'Σ', subtitle: 'Theorems, methods & solved steps', chapter: 'Differential Equations — Order & Degree', img: ASSET_BASE + '/sample_maths.jpg', exams: ['CBSE Class 12', 'JEE Main', 'JEE Advanced', 'BITSAT', 'CUET UG', 'IISER IAT', 'NDA', 'Other Competitive Exams'] },
+      { id: 'biology', name: 'Biology', icon: '🌿', subtitle: 'Clear diagrams & key points', chapter: 'Reproductive Health', img: ASSET_BASE + '/sample_biology.jpg', exams: ['CBSE Class 12', 'NEET UG', 'CUET UG', 'IISER IAT', 'Other Competitive Exams'] },
+      { id: 'english', name: 'English', icon: '📖', subtitle: 'Literature & writing skills', chapter: 'The Last Lesson — Flamingo Ch. 1', img: ASSET_BASE + '/sample_english.jpg', exams: ['CBSE Class 12', 'CUET UG', 'NDA', 'Other Competitive Exams'] }
+    ];
+
+    const REVIEWS = [
+      { name: 'Rahul Sharma', initial: 'R', rating: 5, exam: 'CBSE Class 12 & JEE Main', text: 'Notes kaafi acche hain, handwriting bhi clear hai. Revision ke liye perfect!' },
+      { name: 'Priya Verma', initial: 'P', rating: 5, exam: 'CBSE Class 12 & NEET UG', text: 'Very helpful notes. Everything is explained in a simple and understandable way.' },
+      { name: 'Aman Kumar', initial: 'A', rating: 5, exam: 'JEE Main & BITSAT', text: 'Honestly, ₹140 mein itna complete study material milna worth hai.' },
+      { name: 'Sneha Gupta', initial: 'S', rating: 5, exam: 'CBSE Class 12 & CUET UG', text: 'I really liked the presentation. The notes are neat, organized and easy to study.' },
+      { name: 'Neha Kumari', initial: 'N', rating: 5, exam: 'NEET UG Aspirant', text: 'Mujhe chemistry ke notes bahut pasand aaye. Concepts samajhne mein easy ho gaya.' },
+      { name: 'Aditya Raj', initial: 'A', rating: 5, exam: 'CBSE Class 12 Boards', text: 'The handwritten format makes studying more interesting. Good work!' },
+      { name: 'Riya Patel', initial: 'R', rating: 5, exam: 'NEET UG & Class 12', text: 'Biology diagrams and highlighted NCERT keywords saved me hours during pre-board revision.' },
+      { name: 'Karan Mehta', initial: 'K', rating: 5, exam: 'JEE Advanced Aspirant', text: 'Got the Google Drive link immediately after UTR verification. Downloaded all 5 subjects on my iPad.' }
+    ];
+
+    const FAQS = [
+      { q: 'Which exams are these notes useful for?', a: 'Aligned with NCERT Class 12 syllabus for CBSE Class 12 Boards, JEE Main, JEE Advanced, NEET UG, CUET UG, BITSAT, IISER IAT, NDA & competitive exams.' },
+      { q: 'Which subjects are included?', a: 'All 5 core subjects: Physics, Chemistry (Physical, Organic & Inorganic), Mathematics, Biology, and English (Flamingo, Vistas & Writing Skills).' },
+      { q: 'What format will I receive?', a: 'High-resolution, print-ready English Medium PDF files organized chapter-wise inside Google Drive folders. 100% downloadable.' },
+      { q: 'How will I receive my notes?', a: 'Tap Buy Now, enter your mobile number, pay via PhonePe / Google Pay / Paytm or Scan UPI QR Code, and submit your 12-digit UTR number. Once verified, the Google Drive link unlocks immediately on screen.' },
+      { q: 'Can I study on my mobile?', a: 'Yes! The color-coded handwritten PDFs work smoothly on Android phones, iPhones, tablets, laptops, and are print-ready.' },
+      { q: 'Which academic session are these notes for?', a: 'Updated for the latest 2026–27 academic session following the rationalized CBSE NCERT syllabus.' }
+    ];
+
+    const LIVE_BUYERS = [
+      { name: 'Aarav Sharma', city: 'Kota', text: 'ne abhi ₹140 Complete Study Pack kharida', time: 'Abhi · Just now' },
+      { name: 'Priya Verma', city: 'New Delhi', text: 'ne abhi Study Pack + PYQ (₹189) PhonePe se kharida', time: '1 min pehle' },
+      { name: 'Rohit Kumar', city: 'Patna', text: 'ne abhi ₹140 Handwritten Notes Pack kharida', time: '2 min pehle' },
+      { name: 'Ananya Gupta', city: 'Jaipur', text: 'ne abhi Google Pay se Complete Study Pack kharida', time: 'Abhi · Just now' },
+      { name: 'Karan Yadav', city: 'Lucknow', text: 'ne abhi Study Pack + PYQ Bundle (₹189) kharida', time: '2 min pehle' },
+      { name: 'Neha Singh', city: 'Pune', text: 'ne abhi Paytm se ₹140 Notes Pack kharida', time: '3 min pehle' },
+      { name: 'Vikas Patel', city: 'Ahmedabad', text: 'ne abhi Class 12 + JEE Notes Pack kharida', time: '1 min pehle' },
+      { name: 'Shruti Nair', city: 'Bengaluru', text: 'ne abhi ₹140 Complete Study Pack kharida', time: '4 min pehle' }
+    ];
+
+    function loadSettings() {
+      try { return Object.assign({}, DEFAULT_SETTINGS, JSON.parse(localStorage.getItem('studysphere_settings') || '{}')); }
+      catch { return Object.assign({}, DEFAULT_SETTINGS); }
+    }
+    function saveSettingsLocal(s) { localStorage.setItem('studysphere_settings', JSON.stringify(s)); }
+    function loadOrdersLocal() { try { return JSON.parse(localStorage.getItem('studysphere_orders') || '[]'); } catch { return []; } }
+    function saveOrdersLocal(list) { localStorage.setItem('studysphere_orders', JSON.stringify(list)); }
+
+    let state = {
+      showAllHeroExams: false, selectedExam: null, showAllReviews: false, openFaq: 0,
+      lbSubjectId: 'physics', lbZoom: 1, flashSeconds: 2 * 3600 + 14 * 60 + 48,
+      buyerIdx: 0, buyerDismissed: false, checkoutStep: 'select_upi',
+      customerPhone: '', includePyq: false, orderId: '', selectedUpiApp: 'phonepe',
+      utr: '', activeOrder: null, adminAuthed: false, adminTab: 'orders'
+    };
+
+    function formatHMS(secs) {
+      const h = Math.floor(secs / 3600), m = Math.floor((secs % 3600) / 60), s = secs % 60;
+      return [h, m, s].map(n => String(n).padStart(2, '0')).join(':');
+    }
+
+    setInterval(() => {
+      state.flashSeconds = state.flashSeconds > 1 ? state.flashSeconds - 1 : 2 * 3600 + 14 * 60 + 48;
+      const formatted = formatHMS(state.flashSeconds);
+      const t1 = document.getElementById('flashTimerTop'), t2 = document.getElementById('flashTimerHero');
+      if (t1) t1.textContent = formatted;
+      if (t2) t2.textContent = formatted;
+    }, 1000);
+
+    function showNextBuyerToast() {
+      if (state.buyerDismissed) return;
+      if (!document.getElementById('checkoutModal').classList.contains('hidden') || !document.getElementById('adminModal').classList.contains('hidden')) return;
+      const b = LIVE_BUYERS[state.buyerIdx % LIVE_BUYERS.length];
+      state.buyerIdx++;
+      document.getElementById('toastNameCity').innerHTML = b.name + ' <span class="font-semibold text-slate-500">(' + b.city + ')</span>';
+      document.getElementById('toastAction').textContent = b.text;
+      document.getElementById('toastTime').textContent = 'Verified UPI Purchase · ' + b.time;
+      const el = document.getElementById('liveBuyerToast');
+      el.classList.remove('hidden');
+      setTimeout(() => { if (!state.buyerDismissed) el.classList.add('hidden'); }, 5200);
+    }
+    function dismissBuyerToast() { state.buyerDismissed = true; document.getElementById('liveBuyerToast').classList.add('hidden'); }
+    setTimeout(() => { showNextBuyerToast(); setInterval(showNextBuyerToast, 9200); }, 3500);
+
+    function renderHeroExams() {
+      const list = state.showAllHeroExams ? ALL_EXAMS : PRIMARY_EXAMS;
+      document.getElementById('heroExamsRow').innerHTML =
+        list.map(e => `<button type="button" onclick="filterByExam('${e}')" class="px-3 py-1.5 rounded-lg bg-[#0B1B34] hover:bg-[#173056] text-white text-[11px] font-bold tracking-wide cursor-pointer">${e.toUpperCase()}</button>`).join('') +
+        `<button type="button" onclick="state.showAllHeroExams=!state.showAllHeroExams;renderHeroExams()" class="px-3 py-1.5 rounded-lg bg-white border border-slate-300 text-[#0B1B34] text-[11px] font-bold cursor-pointer">${state.showAllHeroExams ? 'SHOW LESS' : '+5 MORE'}</button>`;
+    }
+    function filterByExam(exam) {
+      const match = ALL_EXAMS.find(e => e.toUpperCase() === exam.toUpperCase()) || exam;
+      state.selectedExam = state.selectedExam === match ? null : match;
+      renderSubjects();
+      document.getElementById('subjects').scrollIntoView({ behavior: 'smooth' });
+    }
+    function renderHeroSubjects() {
+      document.getElementById('heroSubjectsRow').innerHTML = SUBJECTS.map(s =>
+        `<button type="button" onclick="openSampleLightbox('${s.id}')" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#E4F7EC] hover:bg-[#D1F2DF] text-[#0B6E3B] text-xs font-semibold cursor-pointer"><span>✓</span><span>${s.name}</span></button>`
+      ).join('');
+    }
+    function renderSubjects() {
+      document.getElementById('examFilterRow').innerHTML =
+        `<button type="button" onclick="state.selectedExam=null;renderSubjects()" class="px-3.5 py-1.5 rounded-lg text-xs font-semibold cursor-pointer ${state.selectedExam === null ? 'bg-[#0B1B34] text-white' : 'bg-slate-100 text-slate-700'}">All Exams</button>` +
+        ALL_EXAMS.map(e => `<button type="button" onclick="state.selectedExam=state.selectedExam==='${e}'?null:'${e}';renderSubjects()" class="px-3.5 py-1.5 rounded-lg text-xs font-semibold border cursor-pointer ${state.selectedExam === e ? 'bg-[#0E9F57] text-white border-[#0E9F57]' : 'bg-[#EEFBF3] text-[#0B6E3B] border-emerald-200'}">${e}</button>`).join('');
+      document.getElementById('subjectsGrid').innerHTML = SUBJECTS.map((s, idx) => {
+        const hl = !state.selectedExam || s.exams.includes(state.selectedExam);
+        return `<button type="button" onclick="openSampleLightbox('${s.id}')" class="group text-left rounded-2xl border p-4 sm:p-5 bg-white transition-all cursor-pointer flex flex-col justify-between ${idx === 4 ? 'col-span-2 lg:col-span-1' : ''} ${hl ? 'border-slate-200 hover:border-[#0E9F57] shadow-xs' : 'border-slate-100 opacity-45'}">
+          <div><div class="w-11 h-11 rounded-xl bg-[#0B1B34] group-hover:bg-[#0E9F57] text-white text-lg font-bold flex items-center justify-center mb-4">${s.icon}</div><h3 class="font-display text-lg font-bold text-[#0B1B34]">${s.name}</h3><p class="text-xs sm:text-sm text-slate-600 mt-1">${s.subtitle}</p></div>
+          <div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between"><span class="text-[11px] font-extrabold tracking-wider text-[#0E9F57]">HANDWRITTEN PDF</span><span class="text-slate-400 text-xs">⤢</span></div>
+        </button>`;
+      }).join('');
+    }
+    function renderSamples() {
+      document.getElementById('samplesGrid').innerHTML = SUBJECTS.map((s, idx) => `
+        <button type="button" onclick="openSampleLightbox('${s.id}')" class="group rounded-2xl overflow-hidden bg-white border border-slate-200 hover:border-[#0E9F57] shadow-xs hover:shadow-lg transition-all text-left cursor-pointer ${idx === 4 ? 'col-span-2 max-w-[260px] mx-auto sm:max-w-none lg:col-span-1 w-full' : ''}">
+          <div class="aspect-[3/4] w-full overflow-hidden bg-white"><img src="${s.img}" alt="${s.name} handwritten sample" referrerpolicy="no-referrer" class="w-full h-full object-cover object-top" /></div>
+          <div class="px-3 py-2.5 bg-white border-t border-slate-100 flex items-center justify-between gap-2">
+            <div class="min-w-0"><p class="text-xs font-bold text-[#0B1B34] truncate">${s.name}</p><p class="text-[11px] text-slate-500 truncate">${s.chapter}</p></div>
+            <span class="w-7 h-7 rounded-lg bg-slate-100 group-hover:bg-[#0E9F57] group-hover:text-white text-slate-600 flex items-center justify-center shrink-0 text-xs">⤢</span>
+          </div>
+        </button>`).join('');
+    }
+    function renderReviews() {
+      const list = state.showAllReviews ? REVIEWS : REVIEWS.slice(0, 6);
+      document.getElementById('reviewsGrid').innerHTML = list.map(r => `
+        <article class="rounded-2xl bg-white border border-slate-200 p-4 sm:p-5 space-y-2 shadow-xs">
+          <div class="flex items-center justify-between gap-2">
+            <div class="flex items-center gap-3 min-w-0">
+              <div class="w-9 h-9 rounded-full bg-[#0B1B34] text-white font-bold text-sm flex items-center justify-center shrink-0">${r.initial}</div>
+              <div class="min-w-0"><h3 class="text-sm font-bold text-[#0B1B34] truncate">${r.name}</h3><p class="text-[11px] text-slate-500 truncate">${r.exam}</p></div>
+            </div>
+            <span class="text-xs font-bold text-[#0E9F57] shrink-0">${r.rating} ★</span>
+          </div>
+          <div class="text-[#0E9F57] text-xs tracking-wider">${'★'.repeat(r.rating)}</div>
+          <p class="text-sm text-slate-700 leading-relaxed">${r.text}</p>
+        </article>`).join('');
+      document.getElementById('toggleReviewsBtn').textContent = state.showAllReviews ? 'Show Fewer Reviews' : 'See All Reviews (106)';
+    }
+    function toggleAllReviews() { state.showAllReviews = !state.showAllReviews; renderReviews(); }
+    function renderFaqs() {
+      document.getElementById('faqList').innerHTML = FAQS.map((f, idx) => `
+        <div class="rounded-2xl bg-white border border-slate-200 overflow-hidden">
+          <button type="button" onclick="state.openFaq=state.openFaq===${idx}?null:${idx};renderFaqs()" class="w-full flex items-center justify-between gap-4 px-5 py-4 text-left cursor-pointer">
+            <span class="text-sm sm:text-base font-bold text-[#0B1B34]">${f.q}</span>
+            <span class="text-slate-400 font-bold">${state.openFaq === idx ? '−' : '+'}</span>
+          </button>
+          ${state.openFaq === idx ? `<div class="px-5 pb-4 pt-1 text-sm text-slate-600 leading-relaxed border-t border-slate-100">${f.a}</div>` : ''}
+        </div>`).join('');
+    }
+
+    function openSampleLightbox(id) { state.lbSubjectId = id; state.lbZoom = 1; renderLightbox(); document.getElementById('sampleLightbox').classList.remove('hidden'); document.body.style.overflow = 'hidden'; }
+    function closeSampleLightbox() { document.getElementById('sampleLightbox').classList.add('hidden'); document.body.style.overflow = ''; }
+    function changeZoom(delta) {
+      state.lbZoom = Math.min(2, Math.max(1, Number((state.lbZoom + delta).toFixed(1))));
+      document.getElementById('lbZoomLabel').textContent = Math.round(state.lbZoom * 100) + '%';
+      document.getElementById('lbImg').style.transform = 'scale(' + state.lbZoom + ')';
+    }
+    function renderLightbox() {
+      const s = SUBJECTS.find(x => x.id === state.lbSubjectId) || SUBJECTS[0];
+      document.getElementById('lbSubject').textContent = s.name + ' Sample Page';
+      document.getElementById('lbChapter').textContent = s.chapter;
+      document.getElementById('lbImg').src = s.img;
+      document.getElementById('lbImg').style.transform = 'scale(' + state.lbZoom + ')';
+      document.getElementById('lbZoomLabel').textContent = Math.round(state.lbZoom * 100) + '%';
+      document.getElementById('lbTabs').innerHTML = SUBJECTS.map(item => `<button type="button" onclick="openSampleLightbox('${item.id}')" class="px-3 py-1.5 rounded-lg text-xs font-semibold whitespace-nowrap shrink-0 cursor-pointer ${item.id === s.id ? 'bg-[#0B1B34] text-white' : 'bg-white text-slate-600 border border-slate-200'}">${item.name}</button>`).join('');
+    }
+
+    async function sendAlertsForOrder(order, settings) {
+      const clickUrl = window.location.href.split('?')[0] + '?admin=1';
+      if (settings.ntfyTopic) {
+        const cleanTopic = settings.ntfyTopic.trim().replace(/^https?:\/\/ntfy\.sh\//i, '').replace(/[^a-zA-Z0-9_-]/g, '');
+        if (cleanTopic) {
+          fetch('https://ntfy.sh/' + encodeURIComponent(cleanTopic), {
+            method: 'POST',
+            headers: { Title: 'New UTR Received - Rs.' + order.amount, Priority: 'high', Tags: 'moneybag,bell', Click: clickUrl },
+            body: ['Amount: ₹' + order.amount + (order.includePyq ? ' (Study Pack + PYQ)' : ' (Study Pack)'), 'Customer Mobile: +91 ' + order.customerPhone, 'UTR: ' + order.utr, 'UPI App: ' + order.upiApp, 'Order ID: #' + order.orderId].join('\n')
+          }).catch(() => {});
+        }
+      }
+      if (settings.telegramBotToken && settings.telegramChatId) {
+        const text = ['<b>New UTR Received — ₹' + order.amount + '</b>', '', '<b>UTR Number:</b> <code>' + order.utr + '</code>', '<b>Customer Mobile:</b> <code>+91 ' + order.customerPhone + '</code>', '<b>UPI App:</b> ' + order.upiApp, '<b>Pack:</b> ' + (order.includePyq ? 'Study Pack + PYQ Bundle' : 'Complete Study Pack'), '<b>Order ID:</b> <code>#' + order.orderId + '</code>'].join('\n');
+        fetch('https://api.telegram.org/bot' + encodeURIComponent(settings.telegramBotToken.trim()) + '/sendMessage', {
+          method: 'POST', headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ chat_id: settings.telegramChatId.trim(), text: text, parse_mode: 'HTML' })
+        }).catch(() => {});
+      }
+    }
+
+    // Checkout + QR 5-Min Countdown
+    let qrTimerInterval = null, qrSecondsLeft = 300;
+    function stopQrTimer() { if (qrTimerInterval) { clearInterval(qrTimerInterval); qrTimerInterval = null; } }
+    function updateQrTimerUI() {
+      const timeEl = document.getElementById('qrTimerText'), barEl = document.getElementById('qrTimerBar'), labelEl = document.getElementById('qrTimerLabel'), boxEl = document.getElementById('qrTimerBox'), imgEl = document.getElementById('qrCodeImg'), expEl = document.getElementById('qrExpiredOverlay');
+      if (!timeEl) return;
+      const mins = String(Math.floor(qrSecondsLeft / 60)).padStart(2, '0'), secs = String(qrSecondsLeft % 60).padStart(2, '0');
+      timeEl.textContent = mins + ':' + secs;
+      if (barEl) barEl.style.width = Math.round((qrSecondsLeft / 300) * 100) + '%';
+      if (qrSecondsLeft <= 0) {
+        stopQrTimer();
+        if (labelEl) labelEl.textContent = 'QR Code Session Expired';
+        if (boxEl) boxEl.className = 'rounded-xl border p-3.5 space-y-2 bg-red-50 border-red-200 text-red-700';
+        if (timeEl) timeEl.className = 'font-mono text-base font-extrabold tabular-nums px-2.5 py-0.5 rounded-md bg-red-100 text-red-700';
+        if (barEl) barEl.className = 'h-full bg-red-500 transition-all duration-1000';
+        if (imgEl) imgEl.className = 'w-full h-full object-contain opacity-20 blur-[2px]';
+        if (expEl) expEl.classList.remove('hidden');
+      } else if (qrSecondsLeft <= 60) {
+        if (boxEl) boxEl.className = 'rounded-xl border p-3.5 space-y-2 bg-amber-50 border-amber-200 text-amber-900';
+        if (timeEl) timeEl.className = 'font-mono text-base font-extrabold tabular-nums px-2.5 py-0.5 rounded-md bg-amber-200/80 text-amber-950';
+        if (barEl) barEl.className = 'h-full bg-amber-500 transition-all duration-1000';
+      }
+    }
+    function startQrTimer() {
+      stopQrTimer(); qrSecondsLeft = 300; updateQrTimerUI();
+      qrTimerInterval = setInterval(() => { if (qrSecondsLeft > 0) { qrSecondsLeft--; updateQrTimerUI(); } }, 1000);
+    }
+    function regenerateQrCode() { state.orderId = 'SS' + Math.floor(100000 + Math.random() * 900000); state.checkoutStep = 'scan_qr'; renderCheckout(); startQrTimer(); }
+
+    function openCheckout() {
+      const savedOrderId = localStorage.getItem('studysphere_last_order_id');
+      if (savedOrderId) {
+        const found = loadOrdersLocal().find(o => o.orderId === savedOrderId);
+        if (found) { state.activeOrder = found; state.orderId = found.orderId; state.customerPhone = found.customerPhone; state.utr = found.utr; state.includePyq = found.includePyq; state.checkoutStep = 'verifying'; }
+      }
+      if (!state.orderId) state.orderId = 'SS' + Math.floor(100000 + Math.random() * 900000);
+      renderCheckout();
+      document.getElementById('checkoutModal').classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeCheckout() { stopQrTimer(); document.getElementById('checkoutModal').classList.add('hidden'); document.body.style.overflow = ''; }
+    function getUpiHref(appId, orderId, amount, settings) {
+      const schemes = { phonepe: 'phonepe://pay', gpay: 'tez://upi/pay', paytm: 'paytmmp://pay', other: 'upi://pay' };
+      const params = new URLSearchParams({ pa: settings.upiId, pn: settings.merchantName, am: String(amount), cu: 'INR', tn: 'StudySphere-' + orderId, tr: orderId });
+      return (schemes[appId] || 'upi://pay') + '?' + params.toString();
+    }
+    function triggerUpiApp(appId) {
+      const phoneInput = document.getElementById('coPhoneInput');
+      if (phoneInput) state.customerPhone = phoneInput.value.replace(/\D/g, '').slice(0, 10);
+      if (state.customerPhone.length !== 10) {
+        const err = document.getElementById('coPhoneErr');
+        if (err) { err.textContent = 'Kripya apna sahi 10-digit mobile / WhatsApp number enter karein.'; err.classList.remove('hidden'); }
+        return;
+      }
+      state.selectedUpiApp = appId;
+      if (appId === 'other') { state.checkoutStep = 'scan_qr'; renderCheckout(); startQrTimer(); return; }
+      stopQrTimer();
+      const settings = loadSettings(), total = BASE_PRICE + (state.includePyq ? PYQ_PRICE : 0);
+      const a = document.createElement('a'); a.href = getUpiHref(appId, state.orderId, total, settings); a.style.display = 'none';
+      document.body.appendChild(a); a.click(); a.remove();
+      state.checkoutStep = 'enter_utr'; renderCheckout();
+    }
+    function goToEnterUtr() {
+      const phoneInput = document.getElementById('coPhoneInput');
+      if (phoneInput) state.customerPhone = phoneInput.value.replace(/\D/g, '').slice(0, 10);
+      if (state.customerPhone.length !== 10) {
+        const err = document.getElementById('coPhoneErr');
+        if (err) { err.textContent = 'Kripya apna sahi 10-digit mobile / WhatsApp number enter karein.'; err.classList.remove('hidden'); }
+        return;
+      }
+      stopQrTimer(); state.checkoutStep = 'enter_utr'; renderCheckout();
+    }
+    function submitUtrForm(e) {
+      e.preventDefault();
+      const utrVal = (document.getElementById('coUtrInput').value || '').trim().toUpperCase().replace(/[^A-Z0-9]/g, '');
+      if (utrVal.length < 8) { const err = document.getElementById('coUtrErr'); err.textContent = 'Please enter a valid 12-digit UTR / UPI Transaction Number.'; err.classList.remove('hidden'); return; }
+      stopQrTimer(); state.utr = utrVal;
+      const total = BASE_PRICE + (state.includePyq ? PYQ_PRICE : 0);
+      const appNames = { phonepe: 'PhonePe', gpay: 'Google Pay', paytm: 'Paytm', other: 'QR Code (UPI)' };
+      const order = { orderId: state.orderId, customerPhone: state.customerPhone, utr: utrVal, upiApp: appNames[state.selectedUpiApp] || 'UPI', amount: total, includePyq: state.includePyq, status: 'pending', adminNote: '', createdAt: new Date().toISOString() };
+      const orders = loadOrdersLocal().filter(o => o.orderId !== order.orderId);
+      orders.unshift(order); saveOrdersLocal(orders);
+      localStorage.setItem('studysphere_last_order_id', order.orderId);
+      state.activeOrder = order; state.checkoutStep = 'verifying';
+      sendAlertsForOrder(order, loadSettings()); renderCheckout();
+    }
+    function refreshOrderVerify() { const found = loadOrdersLocal().find(o => o.orderId === state.orderId); if (found) state.activeOrder = found; renderCheckout(); }
+    function startNewOrder() { stopQrTimer(); localStorage.removeItem('studysphere_last_order_id'); state.activeOrder = null; state.utr = ''; state.orderId = 'SS' + Math.floor(100000 + Math.random() * 900000); state.checkoutStep = 'select_upi'; renderCheckout(); }
+
+    function renderCheckout() {
+      const settings = loadSettings(), total = BASE_PRICE + (state.includePyq ? PYQ_PRICE : 0), totalMrp = BASE_MRP + (state.includePyq ? PYQ_MRP : 0), card = document.getElementById('checkoutCard');
+      if (state.checkoutStep !== 'scan_qr') stopQrTimer();
+
+      if (state.checkoutStep === 'select_upi') {
+        card.innerHTML = `
+          <div class="flex items-center justify-between px-5 py-4 border-b border-slate-200"><span class="text-sm font-extrabold tracking-wide text-[#0B1B34]">DIRECT UPI PAYMENT</span><button type="button" onclick="closeCheckout()" class="px-2 py-1 rounded-lg text-slate-500 hover:bg-slate-100 font-bold cursor-pointer">✕</button></div>
+          <div class="overflow-y-auto flex-1 px-5 py-4 space-y-4">
+            <div class="flex items-center gap-3 p-3 rounded-xl bg-slate-50 border border-slate-200">
+              <img src="${ASSET_BASE}/checkout_banner.jpg" alt="Study Pack" class="w-20 h-14 rounded-lg object-cover shrink-0 border border-slate-200" />
+              <div class="min-w-0"><p class="text-sm font-bold text-[#0B1B34] leading-snug">CBSE Class 12, CUET, JEE &amp; NEET Notes 2026–27</p><p class="text-xs font-extrabold text-[#0E9F57] mt-0.5">₹140 <span class="text-slate-400 line-through font-normal">₹999</span> · 5 Subjects PDF</p></div>
+            </div>
+            <div class="space-y-1.5">
+              <label class="block text-xs font-bold text-[#0B1B34]">Mobile / WhatsApp Number *</label>
+              <div class="flex items-center rounded-xl border border-slate-300 overflow-hidden focus-within:border-[#0E9F57]"><span class="px-3.5 py-3 text-sm font-bold text-slate-600 bg-slate-50 border-r border-slate-200">+91</span><input id="coPhoneInput" type="tel" inputmode="numeric" maxlength="10" value="${state.customerPhone}" oninput="state.customerPhone=this.value.replace(/\\D/g,'').slice(0,10);this.value=state.customerPhone" placeholder="Enter 10-digit WhatsApp / Mobile number" class="w-full px-3.5 py-3 text-sm font-mono font-semibold text-[#0B1B34] focus:outline-none" /></div>
+              <p id="coPhoneErr" class="hidden text-xs font-medium text-red-600"></p>
+            </div>
+            <div onclick="state.includePyq=!state.includePyq;renderCheckout()" class="rounded-xl border p-3.5 cursor-pointer ${state.includePyq ? 'border-[#0E9F57] bg-[#EEFBF3]/60' : 'border-slate-200 bg-white'}">
+              <div class="flex items-start gap-3"><img src="${ASSET_BASE}/pyq_addon.jpg" alt="PYQ Bundle" class="w-20 h-14 rounded-lg object-cover shrink-0 border border-slate-200" /><div class="min-w-0 flex-1"><p class="text-xs sm:text-sm font-bold text-[#0B1B34]">Class 12 + NEET + JEE PYQ Bundle — Only ₹49!</p><p class="text-[11px] text-slate-600 mt-0.5">Add Previous Year Questions (PYQ) Bundle for extra exam practice.</p></div></div>
+              <div class="flex items-center justify-between mt-2.5 pt-2.5 border-t border-slate-200"><span class="text-sm font-bold text-[#0B1B34]">+₹49 <span class="text-xs text-slate-400 line-through">₹299</span></span><span class="px-3 py-1 rounded-lg border border-slate-300 bg-white text-xs font-bold">${state.includePyq ? '✓ ADDED' : '+ ADD THIS ALSO'}</span></div>
+            </div>
+            <div class="flex items-center justify-between px-4 py-3 rounded-xl bg-[#0B1B34] text-white">
+              <div><p class="text-[11px] text-slate-300">Total Payable Amount</p><p class="text-xs text-emerald-300 font-semibold">Save ₹${totalMrp - total} today</p></div>
+              <div class="text-right tabular-nums"><span class="text-xs text-slate-400 line-through mr-2">₹${totalMrp}</span><span class="font-display text-2xl font-extrabold text-[#22C55E]">₹${total}</span></div>
+            </div>
+            <div class="space-y-2">
+              <p class="text-xs font-bold text-[#0B1B34]">Tap UPI App or Scan QR Code to Pay ₹${total}</p>
+              <div class="grid grid-cols-2 gap-2.5">
+                <button type="button" onclick="triggerUpiApp('phonepe')" class="p-3.5 rounded-xl border border-slate-200 hover:border-[#0E9F57] bg-white text-left flex items-center justify-between cursor-pointer"><div><p class="text-sm font-bold text-[#5F259F]">PhonePe</p><p class="text-[11px] text-slate-500">Pay ₹${total}</p></div><span>→</span></button>
+                <button type="button" onclick="triggerUpiApp('gpay')" class="p-3.5 rounded-xl border border-slate-200 hover:border-[#0E9F57] bg-white text-left flex items-center justify-between cursor-pointer"><div><p class="text-sm font-bold text-[#0B1B34]">Google Pay</p><p class="text-[11px] text-slate-500">Pay ₹${total}</p></div><span>→</span></button>
+                <button type="button" onclick="triggerUpiApp('paytm')" class="p-3.5 rounded-xl border border-slate-200 hover:border-[#0E9F57] bg-white text-left flex items-center justify-between cursor-pointer"><div><p class="text-sm font-bold text-[#002970]">Paytm</p><p class="text-[11px] text-slate-500">Pay ₹${total}</p></div><span>→</span></button>
+                <button type="button" onclick="triggerUpiApp('other')" class="p-3.5 rounded-xl border border-slate-200 hover:border-[#0E9F57] bg-white text-left flex items-center justify-between gap-2 cursor-pointer"><div class="min-w-0"><p class="text-sm font-bold text-[#0B1B34] truncate">QR Code</p><p class="text-[11px] text-[#0E9F57] font-semibold truncate">Other UPI · 5 Min QR</p></div><span class="shrink-0">→</span></button>
+              </div>
+            </div>
+            <div class="rounded-xl bg-slate-50 border border-slate-200 p-3 flex items-center justify-between gap-2">
+              <div class="min-w-0"><p class="text-[11px] text-slate-500">Or pay manually to UPI ID</p><p class="text-xs font-mono font-bold text-[#0B1B34] truncate">${settings.upiId}</p></div>
+              <button type="button" onclick="navigator.clipboard?.writeText('${settings.upiId}');this.textContent='Copied!'" class="px-3 py-1.5 rounded-lg bg-white border border-slate-200 text-xs font-semibold cursor-pointer shrink-0">Copy UPI</button>
+            </div>
+            <button type="button" onclick="goToEnterUtr()" class="w-full py-2 text-xs font-bold text-[#0E9F57] hover:underline cursor-pointer">Already paid? Enter UTR / Transaction Number →</button>
+          </div>`;
+      } else if (state.checkoutStep === 'scan_qr') {
+        const qrData = getUpiHref('other', state.orderId, total, settings);
+        const primaryQr = 'https://api.qrserver.com/v1/create-qr-code/?size=260x260&ecc=M&margin=10&data=' + encodeURIComponent(qrData);
+        const fallbackQr = 'https://quickchart.io/qr?size=260&margin=2&text=' + encodeURIComponent(qrData);
+        card.innerHTML = `
+          <div class="flex items-center justify-between px-5 py-4 border-b border-slate-200">
+            <div class="flex items-center gap-2"><button type="button" onclick="state.checkoutStep='select_upi';renderCheckout()" class="px-2 py-1 rounded-lg text-slate-500 hover:bg-slate-100 font-bold cursor-pointer">←</button><span class="text-sm font-extrabold text-[#0B1B34]">SCAN UPI QR CODE</span></div>
+            <button type="button" onclick="closeCheckout()" class="px-2 py-1 rounded-lg text-slate-500 hover:bg-slate-100 font-bold cursor-pointer">✕</button>
+          </div>
+          <div class="overflow-y-auto flex-1 px-5 py-4 space-y-4">
+            <div id="qrTimerBox" class="rounded-xl border p-3.5 space-y-2 bg-[#0B1B34] border-[#0B1B34] text-white">
+              <div class="flex items-center justify-between gap-2"><span id="qrTimerLabel" class="text-xs font-bold text-slate-200">⏱ Complete Payment Within</span><span id="qrTimerText" class="font-mono text-base font-extrabold tabular-nums px-2.5 py-0.5 rounded-md bg-white/10 text-[#22C55E]">05:00</span></div>
+              <div class="h-1.5 rounded-full overflow-hidden bg-white/15"><div id="qrTimerBar" class="h-full bg-[#22C55E] transition-all duration-1000" style="width:100%"></div></div>
+            </div>
+            <div class="rounded-2xl border border-slate-200 bg-slate-50/70 p-4 text-center space-y-3">
+              <div class="flex items-center justify-between text-xs px-1"><span class="font-semibold text-slate-600">Payable Amount</span><span class="font-display text-lg font-extrabold text-[#0E9F57] tabular-nums">₹${total}</span></div>
+              <div class="relative mx-auto w-56 h-56 rounded-2xl bg-white p-3 border-2 border-slate-200 flex items-center justify-center">
+                <img id="qrCodeImg" src="${primaryQr}" onerror="this.onerror=null;this.src='${fallbackQr}'" alt="UPI QR Code" class="w-full h-full object-contain" />
+                <div id="qrExpiredOverlay" class="hidden absolute inset-0 flex flex-col items-center justify-center p-4 text-center bg-white/85 rounded-2xl"><p class="text-xs font-extrabold text-red-700 mb-2">5 Min Time Over</p><button type="button" onclick="regenerateQrCode()" class="px-3.5 py-2 rounded-xl bg-[#0B1B34] text-white text-xs font-bold cursor-pointer">Generate New QR (5:00)</button></div>
+              </div>
+              <div class="space-y-1"><p class="text-xs font-bold text-[#0B1B34]">Scan with PhonePe, GPay, Paytm, BHIM or any UPI App</p><p class="text-[11px] font-mono text-slate-500">Ref #${state.orderId} · +91 ${state.customerPhone}</p></div>
+              <div class="rounded-xl bg-white border border-slate-200 px-3 py-2 flex items-center justify-between gap-2 text-left">
+                <div class="min-w-0"><p class="text-[10px] text-slate-500">UPI ID</p><p class="text-xs font-mono font-bold text-[#0B1B34] truncate">${settings.upiId}</p></div>
+                <button type="button" onclick="navigator.clipboard?.writeText('${settings.upiId}');this.textContent='Copied!'" class="px-2.5 py-1.5 rounded-lg bg-slate-50 border border-slate-200 text-[11px] font-bold text-[#0B1B34] shrink-0 cursor-pointer">Copy</button>
+              </div>
+            </div>
+            <div class="space-y-2">
+              <button type="button" onclick="goToEnterUtr()" class="w-full py-3.5 px-5 rounded-xl bg-[#0E9F57] hover:bg-[#0A8447] text-white font-extrabold text-sm cursor-pointer">Payment Complete? Enter 12-Digit UTR →</button>
+              <a href="${qrData}" class="w-full py-2.5 px-4 rounded-xl border border-slate-200 bg-white hover:bg-slate-50 text-xs font-bold text-[#0B1B34] flex items-center justify-center gap-1.5">Open Any Installed UPI App Directly ↗</a>
+            </div>
+          </div>`;
+      } else if (state.checkoutStep === 'enter_utr') {
+        const upiHref = getUpiHref(state.selectedUpiApp, state.orderId, total, settings);
+        card.innerHTML = `
+          <div class="flex items-center justify-between px-5 py-4 border-b border-slate-200">
+            <div class="flex items-center gap-2"><button type="button" onclick="state.checkoutStep='select_upi';renderCheckout()" class="px-2 py-1 rounded-lg text-slate-500 hover:bg-slate-100 font-bold cursor-pointer">←</button><span class="text-sm font-extrabold text-[#0B1B34]">SUBMIT UTR / TRANSACTION NO.</span></div>
+            <button type="button" onclick="closeCheckout()" class="px-2 py-1 rounded-lg text-slate-500 hover:bg-slate-100 font-bold cursor-pointer">✕</button>
+          </div>
+          <form onsubmit="submitUtrForm(event)" class="overflow-y-auto flex-1 px-5 py-5 space-y-4">
+            <div class="rounded-xl bg-[#EEFBF3] border border-emerald-200 p-4 space-y-2">
+              <p class="text-xs font-bold text-[#0B1B34]">Paying ₹${total} · Mobile: +91 ${state.customerPhone}</p>
+              <p class="text-[11px] font-mono text-slate-600">UPI: ${settings.upiId} · Ref #${state.orderId}</p>
+              <div class="flex flex-wrap gap-2 pt-1">
+                ${state.selectedUpiApp === 'other'
+                  ? `<button type="button" onclick="state.checkoutStep='scan_qr';renderCheckout();startQrTimer();" class="inline-block px-3 py-1.5 rounded-lg bg-[#0B1B34] text-white text-xs font-bold cursor-pointer">Show QR Code Again</button>`
+                  : `<a href="${upiHref}" class="inline-block px-3 py-1.5 rounded-lg bg-[#0E9F57] text-white text-xs font-bold">Open UPI App Again ↗</a>`}
+                <a href="${getUpiHref('other', state.orderId, total, settings)}" class="inline-block px-3 py-1.5 rounded-lg bg-white border border-emerald-300 text-[#0B6E3B] text-xs font-semibold">Any UPI App</a>
+              </div>
+            </div>
+            <div class="space-y-2">
+              <label class="block text-sm font-bold text-[#0B1B34]">Enter 12-Digit UTR / Transaction Number *</label>
+              <input id="coUtrInput" type="text" required value="${state.utr}" placeholder="e.g. 432318947561" class="w-full px-4 py-3.5 rounded-xl border-2 border-slate-300 text-base font-mono font-bold tracking-wider focus:outline-none focus:border-[#0E9F57]" />
+              <p class="text-xs text-slate-500">Payment complete karne ke baad UPI app se 12-digit UTR / Ref No. copy karke yahaan paste karein.</p>
+              <p id="coUtrErr" class="hidden text-xs font-medium text-red-600"></p>
+            </div>
+            <button type="submit" class="w-full py-3.5 px-5 rounded-xl bg-[#0E9F57] hover:bg-[#0A8447] text-white font-extrabold text-sm cursor-pointer">Submit UTR for Verification →</button>
+          </form>`;
+      } else {
+        const ord = state.activeOrder || { orderId: state.orderId, customerPhone: state.customerPhone, utr: state.utr, amount: total, upiApp: 'UPI', status: 'pending', includePyq: state.includePyq };
+        card.innerHTML = `
+          <div class="flex items-center justify-between px-5 py-4 border-b border-slate-200"><span class="text-sm font-extrabold text-[#0B1B34]">${ord.status === 'verified' ? 'PAYMENT VERIFIED' : 'UTR VERIFICATION STATUS'}</span><button type="button" onclick="closeCheckout()" class="px-2 py-1 rounded-lg text-slate-500 hover:bg-slate-100 font-bold cursor-pointer">✕</button></div>
+          <div class="overflow-y-auto flex-1 px-5 py-6 space-y-5 text-center">
+            ${ord.status === 'verified' ? `
+              <div class="w-14 h-14 mx-auto rounded-full bg-[#EEFBF3] text-[#0E9F57] flex items-center justify-center text-2xl font-bold">✓</div>
+              <h3 class="font-display text-xl font-extrabold text-[#0B1B34]">Study Pack Unlocked!</h3>
+              <p class="text-xs font-mono text-slate-600">Order #${ord.orderId} · UTR ${ord.utr}</p>
+              <div class="space-y-2.5 text-left">
+                <a href="${settings.driveMainLink}" target="_blank" rel="noopener noreferrer" class="w-full py-3 px-4 rounded-xl bg-[#0E9F57] text-white font-bold text-sm flex items-center justify-center gap-2">Open Google Drive Study Pack ↗</a>
+                ${ord.includePyq ? `<a href="${settings.drivePyqLink}" target="_blank" rel="noopener noreferrer" class="w-full py-2.5 px-4 rounded-xl bg-[#0B1B34] text-white font-bold text-xs flex items-center justify-center gap-2">Open Bonus PYQ Bundle Folder ↗</a>` : ''}
+              </div>
+              <button type="button" onclick="startNewOrder()" class="text-xs text-slate-500 underline cursor-pointer">Start another order</button>
+            ` : ord.status === 'rejected' ? `
+              <div class="w-14 h-14 mx-auto rounded-full bg-red-100 text-red-600 flex items-center justify-center text-xl font-bold">!</div>
+              <h3 class="font-display text-xl font-extrabold text-[#0B1B34]">UTR Not Matched</h3>
+              <p class="text-xs text-slate-600">${ord.adminNote || 'Please re-check your 12-digit UTR number and submit again.'}</p>
+              <button type="button" onclick="state.checkoutStep='enter_utr';renderCheckout()" class="w-full py-3 rounded-xl bg-[#0E9F57] text-white font-bold text-sm cursor-pointer">Re-submit Correct UTR</button>
+            ` : `
+              <div class="w-14 h-14 mx-auto rounded-full bg-amber-100 text-amber-700 flex items-center justify-center text-xl font-bold">⏳</div>
+              <h3 class="font-display text-xl font-extrabold text-[#0B1B34]">UTR Submitted Successfully</h3>
+              <p class="text-xs text-slate-600">Aapka UTR verification pending hai. Jaise hi approve hoga, Drive links yahaan unlock ho jayenge.</p>
+              <div class="rounded-xl bg-slate-50 border border-slate-200 p-4 text-left text-xs space-y-1.5">
+                <div class="flex justify-between"><span class="text-slate-500">Order ID</span><span class="font-mono font-bold">#${ord.orderId}</span></div>
+                <div class="flex justify-between"><span class="text-slate-500">Mobile</span><span class="font-mono font-bold">+91 ${ord.customerPhone}</span></div>
+                <div class="flex justify-between"><span class="text-slate-500">UTR</span><span class="font-mono font-extrabold">${ord.utr}</span></div>
+                <div class="flex justify-between"><span class="text-slate-500">Amount</span><span class="font-bold">₹${ord.amount}</span></div>
+              </div>
+              <div class="flex gap-2"><button type="button" onclick="refreshOrderVerify()" class="flex-1 py-3 rounded-xl bg-[#0B1B34] text-white font-bold text-xs cursor-pointer">Check Status</button><button type="button" onclick="state.checkoutStep='enter_utr';renderCheckout()" class="px-4 py-3 rounded-xl border border-slate-200 text-xs font-bold cursor-pointer">Edit UTR</button></div>
+              <button type="button" onclick="closeCheckout(); openAdminModal();" class="text-xs text-slate-500 underline cursor-pointer">Admin? Verify this UTR now</button>
+            `}
+          </div>`;
+      }
+    }
+
+    // Admin Panel (PIN: 1234)
+    function openAdminModal() { renderAdminModal(); document.getElementById('adminModal').classList.remove('hidden'); document.body.style.overflow = 'hidden'; }
+    function closeAdminModal() { document.getElementById('adminModal').classList.add('hidden'); document.body.style.overflow = ''; }
+    function adminLoginSubmit(e) {
+      e.preventDefault();
+      if ((document.getElementById('adminPinInput').value || '').trim() === loadSettings().adminPin) { state.adminAuthed = true; renderAdminModal(); }
+      else { document.getElementById('adminLoginErr').classList.remove('hidden'); }
+    }
+    function adminUpdateOrder(orderId, status) {
+      saveOrdersLocal(loadOrdersLocal().map(o => o.orderId === orderId ? Object.assign({}, o, { status }) : o));
+      renderAdminModal();
+    }
+    function adminSaveSettingsForm(e) {
+      e.preventDefault();
+      saveSettingsLocal({
+        upiId: document.getElementById('setUpiId').value.trim(),
+        merchantName: document.getElementById('setMerchant').value.trim(),
+        driveMainLink: document.getElementById('setDriveMain').value.trim(),
+        drivePyqLink: document.getElementById('setDrivePyq').value.trim(),
+        telegramBotToken: document.getElementById('setTgToken').value.trim(),
+        telegramChatId: document.getElementById('setTgChat').value.trim(),
+        ntfyTopic: document.getElementById('setNtfyTopic').value.trim(),
+        adminPin: document.getElementById('setAdminPin').value.trim() || '1234'
+      });
+      const msg = document.getElementById('adminSaveMsg'); msg.textContent = 'Settings saved successfully!'; msg.classList.remove('hidden');
+    }
+    function renderAdminModal() {
+      const card = document.getElementById('adminCard'), settings = loadSettings(), orders = loadOrdersLocal();
+      if (!state.adminAuthed) {
+        card.innerHTML = `
+          <div class="flex items-center justify-between px-5 py-4 bg-[#0B1B34] text-white"><span class="text-sm font-bold">Admin UTR Verification Panel</span><button type="button" onclick="closeAdminModal()" class="text-slate-300 hover:text-white font-bold cursor-pointer">✕</button></div>
+          <form onsubmit="adminLoginSubmit(event)" class="p-6 space-y-4 max-w-sm mx-auto w-full text-center">
+            <h3 class="text-lg font-bold text-[#0B1B34]">Enter Admin PIN</h3>
+            <p class="text-xs text-slate-500">Default PIN: <span class="font-mono font-bold text-[#0B1B34]">1234</span></p>
+            <input id="adminPinInput" type="password" inputmode="numeric" placeholder="1234" class="w-full px-4 py-3 rounded-xl border border-slate-300 text-center font-mono text-lg tracking-widest" />
+            <p id="adminLoginErr" class="hidden text-xs text-red-600 font-semibold">Wrong PIN. Default is 1234.</p>
+            <button type="submit" class="w-full py-3 rounded-xl bg-[#0B1B34] text-white font-bold text-sm cursor-pointer">Unlock Panel</button>
+          </form>`;
+        return;
+      }
+      card.innerHTML = `
+        <div class="flex items-center justify-between px-5 py-4 bg-[#0B1B34] text-white"><span class="text-sm font-bold">Admin UTR Verification Panel</span><button type="button" onclick="closeAdminModal()" class="text-slate-300 hover:text-white font-bold cursor-pointer">✕</button></div>
+        <div class="flex items-center gap-2 px-5 py-3 border-b border-slate-200 bg-slate-50">
+          <button type="button" onclick="state.adminTab='orders';renderAdminModal()" class="px-3.5 py-2 rounded-lg text-xs font-bold cursor-pointer ${state.adminTab === 'orders' ? 'bg-[#0B1B34] text-white' : 'bg-white border border-slate-200'}">UTR Requests (${orders.length})</button>
+          <button type="button" onclick="state.adminTab='settings';renderAdminModal()" class="px-3.5 py-2 rounded-lg text-xs font-bold cursor-pointer ${state.adminTab === 'settings' ? 'bg-[#0B1B34] text-white' : 'bg-white border border-slate-200'}">UPI &amp; Alerts</button>
+        </div>
+        ${state.adminTab === 'orders' ? `
+          <div class="overflow-y-auto flex-1 p-5 space-y-3">
+            ${orders.length === 0 ? '<p class="text-center text-xs text-slate-500 py-10">No UTR submissions yet.</p>' : orders.map(o => `
+              <div class="rounded-xl border border-slate-200 p-4 space-y-2.5">
+                <div class="flex justify-between items-start gap-2">
+                  <div><p class="font-mono text-sm font-extrabold text-[#0B1B34]">${o.utr}</p><p class="text-xs font-mono font-bold text-[#0B1B34] mt-0.5">+91 ${o.customerPhone} · <a href="https://wa.me/91${o.customerPhone}" target="_blank" class="text-[#0E9F57] underline font-sans">WhatsApp</a></p><p class="text-xs text-slate-500">#${o.orderId} · ${o.upiApp}</p></div>
+                  <div class="text-right"><p class="font-display text-lg font-extrabold">₹${o.amount}</p><p class="text-[11px] font-bold capitalize ${o.status === 'verified' ? 'text-[#0E9F57]' : o.status === 'rejected' ? 'text-red-600' : 'text-amber-700'}">${o.status}</p></div>
+                </div>
+                <div class="flex gap-2 pt-2 border-t border-slate-100">
+                  ${o.status !== 'verified' ? `<button type="button" onclick="adminUpdateOrder('${o.orderId}','verified')" class="px-3.5 py-2 rounded-lg bg-[#0E9F57] text-white text-xs font-bold cursor-pointer">Verify &amp; Unlock</button>` : ''}
+                  ${o.status !== 'rejected' ? `<button type="button" onclick="adminUpdateOrder('${o.orderId}','rejected')" class="px-3.5 py-2 rounded-lg bg-red-50 text-red-700 border border-red-200 text-xs font-bold cursor-pointer">Reject</button>` : ''}
+                </div>
+              </div>`).join('')}
+          </div>
+        ` : `
+          <form onsubmit="adminSaveSettingsForm(event)" class="overflow-y-auto flex-1 p-5 space-y-3.5 text-xs">
+            <div><label class="block font-bold mb-1">Your UPI ID</label><input id="setUpiId" value="${settings.upiId}" class="w-full px-3 py-2 rounded-lg border border-slate-300 font-mono" /></div>
+            <div><label class="block font-bold mb-1">Merchant Name</label><input id="setMerchant" value="${settings.merchantName}" class="w-full px-3 py-2 rounded-lg border border-slate-300" /></div>
+            <div><label class="block font-bold mb-1">Google Drive Link (₹140 Pack)</label><input id="setDriveMain" value="${settings.driveMainLink}" class="w-full px-3 py-2 rounded-lg border border-slate-300" /></div>
+            <div><label class="block font-bold mb-1">Google Drive Link (₹49 PYQ Add-on)</label><input id="setDrivePyq" value="${settings.drivePyqLink}" class="w-full px-3 py-2 rounded-lg border border-slate-300" /></div>
+            <div><label class="block font-bold mb-1">Telegram Bot Token (@BotFather)</label><input id="setTgToken" value="${settings.telegramBotToken}" placeholder="Optional: 7412345:AAH..." class="w-full px-3 py-2 rounded-lg border border-slate-300 font-mono" /></div>
+            <div><label class="block font-bold mb-1">Telegram Chat ID (@userinfobot)</label><input id="setTgChat" value="${settings.telegramChatId}" placeholder="Optional: 123456789" class="w-full px-3 py-2 rounded-lg border border-slate-300 font-mono" /></div>
+            <div><label class="block font-bold mb-1">ntfy Topic Name</label><input id="setNtfyTopic" value="${settings.ntfyTopic}" class="w-full px-3 py-2 rounded-lg border border-slate-300 font-mono" /></div>
+            <div><label class="block font-bold mb-1">Admin PIN</label><input id="setAdminPin" value="${settings.adminPin}" class="w-full px-3 py-2 rounded-lg border border-slate-300 font-mono" /></div>
+            <p id="adminSaveMsg" class="hidden text-[#0B6E3B] bg-[#EEFBF3] border border-emerald-200 rounded-lg px-3 py-2 font-semibold"></p>
+            <button type="submit" class="w-full py-3 rounded-xl bg-[#0E9F57] text-white font-bold text-sm cursor-pointer">Save Settings</button>
+          </form>
+        `}`;
+    }
+
+    renderHeroExams(); renderHeroSubjects(); renderSubjects(); renderSamples(); renderReviews(); renderFaqs();
+    if (new URLSearchParams(window.location.search).get('admin') === '1') openAdminModal();
+  </script>
+</body>
+</html>
