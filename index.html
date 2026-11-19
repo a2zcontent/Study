@@ -215,12 +215,10 @@
     </section>
   </main>
 
-  <!-- FOOTER -->
+  <!-- FOOTER (No Admin Link) -->
   <footer class="py-8 border-t border-slate-100 bg-white text-center text-xs text-slate-500">
-    <div class="max-w-6xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-4">
+    <div class="max-w-6xl mx-auto px-4 flex items-center justify-center">
       <span>© 2026 StudySphere · Digital PDF study material</span>
-      <span class="hidden sm:inline text-slate-300">·</span>
-      <button type="button" onclick="openAdminModal()" class="font-semibold text-slate-500 hover:text-[#0B1B34] underline underline-offset-2 cursor-pointer">Admin UTR Verify</button>
     </div>
   </footer>
 
@@ -282,11 +280,6 @@
     <div id="checkoutCard" class="w-full sm:max-w-lg max-h-[94vh] bg-white rounded-t-2xl sm:rounded-2xl shadow-2xl overflow-hidden flex flex-col" onclick="event.stopPropagation()"></div>
   </div>
 
-  <!-- ADMIN UTR VERIFICATION MODAL -->
-  <div id="adminModal" class="hidden fixed inset-0 z-50 bg-[#0B1B34]/80 backdrop-blur-xs flex items-end sm:items-center justify-center sm:p-4" onclick="closeAdminModal()">
-    <div id="adminCard" class="w-full sm:max-w-2xl max-h-[92vh] bg-white rounded-t-2xl sm:rounded-2xl shadow-2xl overflow-hidden flex flex-col" onclick="event.stopPropagation()"></div>
-  </div>
-
   <script>
     const IMG = {
       hero: 'https://inkwise-exam-notes.lovable.app/__l5e/assets-v1/039c8683-b0bd-483d-9190-bd781d4b02e4/study-pack-books-bundle.png',
@@ -299,15 +292,12 @@
     };
     const BASE_PRICE = 140, BASE_MRP = 999, PYQ_PRICE = 49, PYQ_MRP = 299;
 
-    const DEFAULT_SETTINGS = {
+    const SELLER_CONFIG = {
       upiId: 'paytmqr2810050501011dateishbh6t@paytm',
       merchantName: 'StudySphere',
-      driveMainLink: 'https://drive.google.com/drive/folders/studysphere-class12-notes-2026',
-      drivePyqLink: 'https://drive.google.com/drive/folders/studysphere-pyq-bundle-2026',
-      adminPin: '1234',
       ntfyTopic: 'Natori-mahar',
-      telegramBotToken: '',
-      telegramChatId: ''
+      telegramBotToken: '', // Optional: paste @BotFather token here
+      telegramChatId: ''    // Optional: paste @userinfobot chat ID here
     };
 
     const PRIMARY_EXAMS = ['CBSE CLASS 12', 'JEE MAIN', 'JEE ADVANCED', 'NEET UG'];
@@ -336,7 +326,7 @@
       { q: 'Which exams are these notes useful for?', a: 'Aligned with NCERT Class 12 syllabus for CBSE Class 12 Boards, JEE Main, JEE Advanced, NEET UG, CUET UG, BITSAT, IISER IAT, NDA & competitive exams.' },
       { q: 'Which subjects are included?', a: 'All 5 core subjects: Physics, Chemistry (Physical, Organic & Inorganic), Mathematics, Biology, and English (Flamingo, Vistas & Writing Skills).' },
       { q: 'What format will I receive?', a: 'High-resolution, print-ready English Medium PDF files organized chapter-wise inside Google Drive folders. 100% downloadable.' },
-      { q: 'How will I receive my notes?', a: 'Tap Buy Now, enter your mobile number, pay via PhonePe / Google Pay / Paytm or Scan UPI QR Code, and submit your 12-digit UTR number. Once verified, the Google Drive link unlocks immediately on screen.' },
+      { q: 'How will I receive my notes?', a: 'Tap Buy Now, enter your WhatsApp number, pay via PhonePe / Google Pay / Paytm or Scan UPI QR Code, and submit your 12-digit UTR number. Within 2–5 minutes of verification, your Google Drive PDF link is delivered directly on WhatsApp.' },
       { q: 'Can I study on my mobile?', a: 'Yes! The color-coded handwritten PDFs work smoothly on Android phones, iPhones, tablets, laptops, and are print-ready.' },
       { q: 'Which academic session are these notes for?', a: 'Updated for the latest 2026–27 academic session following the rationalized CBSE NCERT syllabus.' }
     ];
@@ -352,11 +342,7 @@
       { name: 'Shruti Nair', city: 'Bengaluru', text: 'ne abhi ₹140 Complete Study Pack kharida', time: '4 min pehle' }
     ];
 
-    function loadSettings() {
-      try { return Object.assign({}, DEFAULT_SETTINGS, JSON.parse(localStorage.getItem('studysphere_settings') || '{}')); }
-      catch { return Object.assign({}, DEFAULT_SETTINGS); }
-    }
-    function saveSettingsLocal(s) { localStorage.setItem('studysphere_settings', JSON.stringify(s)); }
+    function loadSettings() { return SELLER_CONFIG; }
     function loadOrdersLocal() { try { return JSON.parse(localStorage.getItem('studysphere_orders') || '[]'); } catch { return []; } }
     function saveOrdersLocal(list) { localStorage.setItem('studysphere_orders', JSON.stringify(list)); }
 
@@ -365,7 +351,7 @@
       lbSubjectId: 'physics', lbZoom: 1, flashSeconds: 2 * 3600 + 14 * 60 + 48,
       buyerIdx: 0, buyerDismissed: false, checkoutStep: 'select_upi',
       customerPhone: '', includePyq: false, orderId: '', selectedUpiApp: 'phonepe',
-      utr: '', activeOrder: null, adminAuthed: false, adminTab: 'orders'
+      utr: '', activeOrder: null
     };
 
     function formatHMS(secs) {
@@ -383,7 +369,7 @@
 
     function showNextBuyerToast() {
       if (state.buyerDismissed) return;
-      if (!document.getElementById('checkoutModal').classList.contains('hidden') || !document.getElementById('adminModal').classList.contains('hidden')) return;
+      if (!document.getElementById('checkoutModal').classList.contains('hidden')) return;
       const b = LIVE_BUYERS[state.buyerIdx % LIVE_BUYERS.length];
       state.buyerIdx++;
       document.getElementById('toastNameCity').innerHTML = b.name + ' <span class="font-semibold text-slate-500">(' + b.city + ')</span>';
@@ -480,23 +466,45 @@
       document.getElementById('lbTabs').innerHTML = SUBJECTS.map(item => `<button type="button" onclick="openSampleLightbox('${item.id}')" class="px-3 py-1.5 rounded-lg text-xs font-semibold whitespace-nowrap shrink-0 cursor-pointer ${item.id === s.id ? 'bg-[#0B1B34] text-white' : 'bg-white text-slate-600 border border-slate-200'}">${item.name}</button>`).join('');
     }
 
+    // Instant Owner Alerts (ntfy + Telegram) with 1-tap WhatsApp delivery link
     async function sendAlertsForOrder(order, settings) {
-      const clickUrl = window.location.href.split('?')[0] + '?admin=1';
+      const waMsg = encodeURIComponent(
+        'Hi! Your StudySphere payment of Rs.' + order.amount + ' (Order #' + order.orderId + ', UTR ' + order.utr + ') is verified! Here is your Google Drive Study Pack link:'
+      );
+      const waLink = 'https://wa.me/91' + order.customerPhone + '?text=' + waMsg;
+
       if (settings.ntfyTopic) {
         const cleanTopic = settings.ntfyTopic.trim().replace(/^https?:\/\/ntfy\.sh\//i, '').replace(/[^a-zA-Z0-9_-]/g, '');
         if (cleanTopic) {
           fetch('https://ntfy.sh/' + encodeURIComponent(cleanTopic), {
             method: 'POST',
-            headers: { Title: 'New UTR Received - Rs.' + order.amount, Priority: 'high', Tags: 'moneybag,bell', Click: clickUrl },
-            body: ['Amount: ₹' + order.amount + (order.includePyq ? ' (Study Pack + PYQ)' : ' (Study Pack)'), 'Customer Mobile: +91 ' + order.customerPhone, 'UTR: ' + order.utr, 'UPI App: ' + order.upiApp, 'Order ID: #' + order.orderId].join('\n')
+            headers: { Title: 'New UTR Received - Rs.' + order.amount, Priority: 'high', Tags: 'moneybag,bell', Click: waLink },
+            body: [
+              'Amount: ₹' + order.amount + (order.includePyq ? ' (Study Pack + PYQ)' : ' (Study Pack)'),
+              'Customer Mobile: +91 ' + order.customerPhone,
+              'UTR: ' + order.utr,
+              'UPI App: ' + order.upiApp,
+              'Order ID: #' + order.orderId,
+              'Tap alert to open WhatsApp & send Notes after checking UTR.'
+            ].join('\n')
           }).catch(() => {});
         }
       }
       if (settings.telegramBotToken && settings.telegramChatId) {
-        const text = ['<b>New UTR Received — ₹' + order.amount + '</b>', '', '<b>UTR Number:</b> <code>' + order.utr + '</code>', '<b>Customer Mobile:</b> <code>+91 ' + order.customerPhone + '</code>', '<b>UPI App:</b> ' + order.upiApp, '<b>Pack:</b> ' + (order.includePyq ? 'Study Pack + PYQ Bundle' : 'Complete Study Pack'), '<b>Order ID:</b> <code>#' + order.orderId + '</code>'].join('\n');
+        const text = [
+          '<b>New UTR Received — ₹' + order.amount + '</b>',
+          '',
+          '<b>UTR Number:</b> <code>' + order.utr + '</code>',
+          '<b>Customer Mobile:</b> <code>+91 ' + order.customerPhone + '</code>',
+          '<b>UPI App:</b> ' + order.upiApp,
+          '<b>Pack:</b> ' + (order.includePyq ? 'Study Pack + PYQ Bundle' : 'Complete Study Pack'),
+          '<b>Order ID:</b> <code>#' + order.orderId + '</code>',
+          '',
+          '<a href="' + waLink + '">Send Drive Link on WhatsApp →</a>'
+        ].join('\n');
         fetch('https://api.telegram.org/bot' + encodeURIComponent(settings.telegramBotToken.trim()) + '/sendMessage', {
           method: 'POST', headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ chat_id: settings.telegramChatId.trim(), text: text, parse_mode: 'HTML' })
+          body: JSON.stringify({ chat_id: settings.telegramChatId.trim(), text: text, parse_mode: 'HTML', disable_web_page_preview: true })
         }).catch(() => {});
       }
     }
@@ -580,14 +588,13 @@
       stopQrTimer(); state.utr = utrVal;
       const total = BASE_PRICE + (state.includePyq ? PYQ_PRICE : 0);
       const appNames = { phonepe: 'PhonePe', gpay: 'Google Pay', paytm: 'Paytm', other: 'QR Code (UPI)' };
-      const order = { orderId: state.orderId, customerPhone: state.customerPhone, utr: utrVal, upiApp: appNames[state.selectedUpiApp] || 'UPI', amount: total, includePyq: state.includePyq, status: 'pending', adminNote: '', createdAt: new Date().toISOString() };
+      const order = { orderId: state.orderId, customerPhone: state.customerPhone, utr: utrVal, upiApp: appNames[state.selectedUpiApp] || 'UPI', amount: total, includePyq: state.includePyq, status: 'pending', createdAt: new Date().toISOString() };
       const orders = loadOrdersLocal().filter(o => o.orderId !== order.orderId);
       orders.unshift(order); saveOrdersLocal(orders);
       localStorage.setItem('studysphere_last_order_id', order.orderId);
       state.activeOrder = order; state.checkoutStep = 'verifying';
       sendAlertsForOrder(order, loadSettings()); renderCheckout();
     }
-    function refreshOrderVerify() { const found = loadOrdersLocal().find(o => o.orderId === state.orderId); if (found) state.activeOrder = found; renderCheckout(); }
     function startNewOrder() { stopQrTimer(); localStorage.removeItem('studysphere_last_order_id'); state.activeOrder = null; state.utr = ''; state.orderId = 'SS' + Math.floor(100000 + Math.random() * 900000); state.checkoutStep = 'select_upi'; renderCheckout(); }
 
     function renderCheckout() {
@@ -690,117 +697,31 @@
       } else {
         const ord = state.activeOrder || { orderId: state.orderId, customerPhone: state.customerPhone, utr: state.utr, amount: total, upiApp: 'UPI', status: 'pending', includePyq: state.includePyq };
         card.innerHTML = `
-          <div class="flex items-center justify-between px-5 py-4 border-b border-slate-200"><span class="text-sm font-extrabold text-[#0B1B34]">${ord.status === 'verified' ? 'PAYMENT VERIFIED' : 'UTR VERIFICATION STATUS'}</span><button type="button" onclick="closeCheckout()" class="px-2 py-1 rounded-lg text-slate-500 hover:bg-slate-100 font-bold cursor-pointer">✕</button></div>
+          <div class="flex items-center justify-between px-5 py-4 border-b border-slate-200"><span class="text-sm font-extrabold text-[#0B1B34]">UTR SUBMITTED · VERIFYING</span><button type="button" onclick="closeCheckout()" class="px-2 py-1 rounded-lg text-slate-500 hover:bg-slate-100 font-bold cursor-pointer">✕</button></div>
           <div class="overflow-y-auto flex-1 px-5 py-6 space-y-5 text-center">
-            ${ord.status === 'verified' ? `
-              <div class="w-14 h-14 mx-auto rounded-full bg-[#EEFBF3] text-[#0E9F57] flex items-center justify-center text-2xl font-bold">✓</div>
-              <h3 class="font-display text-xl font-extrabold text-[#0B1B34]">Study Pack Unlocked!</h3>
-              <p class="text-xs font-mono text-slate-600">Order #${ord.orderId} · UTR ${ord.utr}</p>
-              <div class="space-y-2.5 text-left">
-                <a href="${settings.driveMainLink}" target="_blank" rel="noopener noreferrer" class="w-full py-3 px-4 rounded-xl bg-[#0E9F57] text-white font-bold text-sm flex items-center justify-center gap-2">Open Google Drive Study Pack ↗</a>
-                ${ord.includePyq ? `<a href="${settings.drivePyqLink}" target="_blank" rel="noopener noreferrer" class="w-full py-2.5 px-4 rounded-xl bg-[#0B1B34] text-white font-bold text-xs flex items-center justify-center gap-2">Open Bonus PYQ Bundle Folder ↗</a>` : ''}
-              </div>
-              <button type="button" onclick="startNewOrder()" class="text-xs text-slate-500 underline cursor-pointer">Start another order</button>
-            ` : ord.status === 'rejected' ? `
-              <div class="w-14 h-14 mx-auto rounded-full bg-red-100 text-red-600 flex items-center justify-center text-xl font-bold">!</div>
-              <h3 class="font-display text-xl font-extrabold text-[#0B1B34]">UTR Not Matched</h3>
-              <p class="text-xs text-slate-600">${ord.adminNote || 'Please re-check your 12-digit UTR number and submit again.'}</p>
-              <button type="button" onclick="state.checkoutStep='enter_utr';renderCheckout()" class="w-full py-3 rounded-xl bg-[#0E9F57] text-white font-bold text-sm cursor-pointer">Re-submit Correct UTR</button>
-            ` : `
-              <div class="w-14 h-14 mx-auto rounded-full bg-amber-100 text-amber-700 flex items-center justify-center text-xl font-bold">⏳</div>
-              <h3 class="font-display text-xl font-extrabold text-[#0B1B34]">UTR Submitted Successfully</h3>
-              <p class="text-xs text-slate-600">Aapka UTR verification pending hai. Jaise hi approve hoga, Drive links yahaan unlock ho jayenge.</p>
-              <div class="rounded-xl bg-slate-50 border border-slate-200 p-4 text-left text-xs space-y-1.5">
-                <div class="flex justify-between"><span class="text-slate-500">Order ID</span><span class="font-mono font-bold">#${ord.orderId}</span></div>
-                <div class="flex justify-between"><span class="text-slate-500">Mobile</span><span class="font-mono font-bold">+91 ${ord.customerPhone}</span></div>
-                <div class="flex justify-between"><span class="text-slate-500">UTR</span><span class="font-mono font-extrabold">${ord.utr}</span></div>
-                <div class="flex justify-between"><span class="text-slate-500">Amount</span><span class="font-bold">₹${ord.amount}</span></div>
-              </div>
-              <div class="flex gap-2"><button type="button" onclick="refreshOrderVerify()" class="flex-1 py-3 rounded-xl bg-[#0B1B34] text-white font-bold text-xs cursor-pointer">Check Status</button><button type="button" onclick="state.checkoutStep='enter_utr';renderCheckout()" class="px-4 py-3 rounded-xl border border-slate-200 text-xs font-bold cursor-pointer">Edit UTR</button></div>
-              <button type="button" onclick="closeCheckout(); openAdminModal();" class="text-xs text-slate-500 underline cursor-pointer">Admin? Verify this UTR now</button>
-            `}
+            <div class="w-14 h-14 mx-auto rounded-full bg-[#EEFBF3] text-[#0E9F57] flex items-center justify-center text-2xl font-bold">✓</div>
+            <div class="space-y-1.5">
+              <p class="text-xs font-extrabold tracking-wider text-[#0E9F57] uppercase">Verification In Progress</p>
+              <h3 class="font-display text-xl font-extrabold text-[#0B1B34]">UTR Received Successfully!</h3>
+              <p class="text-xs sm:text-sm text-slate-600 leading-relaxed max-w-sm mx-auto">
+                Hum aapka 12-digit UTR bank statement se match kar rahe hain. <strong>2–5 minute</strong> me verify hote hi aapke WhatsApp (<strong class="font-mono text-[#0B1B34]">+91 ${ord.customerPhone}</strong>) par Google Drive PDF link bhej diya jayega.
+              </p>
+            </div>
+            <div class="rounded-xl bg-slate-50 border border-slate-200 p-4 text-left text-xs space-y-1.5">
+              <div class="flex justify-between"><span class="text-slate-500">Order ID</span><span class="font-mono font-bold">#${ord.orderId}</span></div>
+              <div class="flex justify-between"><span class="text-slate-500">WhatsApp / Mobile</span><span class="font-mono font-bold">+91 ${ord.customerPhone}</span></div>
+              <div class="flex justify-between"><span class="text-slate-500">Submitted UTR</span><span class="font-mono font-extrabold">${ord.utr}</span></div>
+              <div class="flex justify-between"><span class="text-slate-500">Amount Paid</span><span class="font-bold">₹${ord.amount} (${ord.upiApp})</span></div>
+            </div>
+            <div class="flex gap-2">
+              <button type="button" onclick="state.checkoutStep='enter_utr';renderCheckout()" class="flex-1 py-3 rounded-xl border border-slate-200 hover:bg-slate-50 text-xs font-bold text-[#0B1B34] cursor-pointer">Edit / Correct UTR</button>
+              <button type="button" onclick="startNewOrder()" class="flex-1 py-3 rounded-xl bg-[#0B1B34] hover:bg-[#162F57] text-white font-bold text-xs cursor-pointer">New Order</button>
+            </div>
           </div>`;
       }
     }
 
-    // Admin Panel (PIN: 1234)
-    function openAdminModal() { renderAdminModal(); document.getElementById('adminModal').classList.remove('hidden'); document.body.style.overflow = 'hidden'; }
-    function closeAdminModal() { document.getElementById('adminModal').classList.add('hidden'); document.body.style.overflow = ''; }
-    function adminLoginSubmit(e) {
-      e.preventDefault();
-      if ((document.getElementById('adminPinInput').value || '').trim() === loadSettings().adminPin) { state.adminAuthed = true; renderAdminModal(); }
-      else { document.getElementById('adminLoginErr').classList.remove('hidden'); }
-    }
-    function adminUpdateOrder(orderId, status) {
-      saveOrdersLocal(loadOrdersLocal().map(o => o.orderId === orderId ? Object.assign({}, o, { status }) : o));
-      renderAdminModal();
-    }
-    function adminSaveSettingsForm(e) {
-      e.preventDefault();
-      saveSettingsLocal({
-        upiId: document.getElementById('setUpiId').value.trim(),
-        merchantName: document.getElementById('setMerchant').value.trim(),
-        driveMainLink: document.getElementById('setDriveMain').value.trim(),
-        drivePyqLink: document.getElementById('setDrivePyq').value.trim(),
-        telegramBotToken: document.getElementById('setTgToken').value.trim(),
-        telegramChatId: document.getElementById('setTgChat').value.trim(),
-        ntfyTopic: document.getElementById('setNtfyTopic').value.trim(),
-        adminPin: document.getElementById('setAdminPin').value.trim() || '1234'
-      });
-      const msg = document.getElementById('adminSaveMsg'); msg.textContent = 'Settings saved successfully!'; msg.classList.remove('hidden');
-    }
-    function renderAdminModal() {
-      const card = document.getElementById('adminCard'), settings = loadSettings(), orders = loadOrdersLocal();
-      if (!state.adminAuthed) {
-        card.innerHTML = `
-          <div class="flex items-center justify-between px-5 py-4 bg-[#0B1B34] text-white"><span class="text-sm font-bold">Admin UTR Verification Panel</span><button type="button" onclick="closeAdminModal()" class="text-slate-300 hover:text-white font-bold cursor-pointer">✕</button></div>
-          <form onsubmit="adminLoginSubmit(event)" class="p-6 space-y-4 max-w-sm mx-auto w-full text-center">
-            <h3 class="text-lg font-bold text-[#0B1B34]">Enter Admin PIN</h3>
-            <p class="text-xs text-slate-500">Default PIN: <span class="font-mono font-bold text-[#0B1B34]">1234</span></p>
-            <input id="adminPinInput" type="password" inputmode="numeric" placeholder="1234" class="w-full px-4 py-3 rounded-xl border border-slate-300 text-center font-mono text-lg tracking-widest" />
-            <p id="adminLoginErr" class="hidden text-xs text-red-600 font-semibold">Wrong PIN. Default is 1234.</p>
-            <button type="submit" class="w-full py-3 rounded-xl bg-[#0B1B34] text-white font-bold text-sm cursor-pointer">Unlock Panel</button>
-          </form>`;
-        return;
-      }
-      card.innerHTML = `
-        <div class="flex items-center justify-between px-5 py-4 bg-[#0B1B34] text-white"><span class="text-sm font-bold">Admin UTR Verification Panel</span><button type="button" onclick="closeAdminModal()" class="text-slate-300 hover:text-white font-bold cursor-pointer">✕</button></div>
-        <div class="flex items-center gap-2 px-5 py-3 border-b border-slate-200 bg-slate-50">
-          <button type="button" onclick="state.adminTab='orders';renderAdminModal()" class="px-3.5 py-2 rounded-lg text-xs font-bold cursor-pointer ${state.adminTab === 'orders' ? 'bg-[#0B1B34] text-white' : 'bg-white border border-slate-200'}">UTR Requests (${orders.length})</button>
-          <button type="button" onclick="state.adminTab='settings';renderAdminModal()" class="px-3.5 py-2 rounded-lg text-xs font-bold cursor-pointer ${state.adminTab === 'settings' ? 'bg-[#0B1B34] text-white' : 'bg-white border border-slate-200'}">UPI &amp; Alerts</button>
-        </div>
-        ${state.adminTab === 'orders' ? `
-          <div class="overflow-y-auto flex-1 p-5 space-y-3">
-            ${orders.length === 0 ? '<p class="text-center text-xs text-slate-500 py-10">No UTR submissions yet.</p>' : orders.map(o => `
-              <div class="rounded-xl border border-slate-200 p-4 space-y-2.5">
-                <div class="flex justify-between items-start gap-2">
-                  <div><p class="font-mono text-sm font-extrabold text-[#0B1B34]">${o.utr}</p><p class="text-xs font-mono font-bold text-[#0B1B34] mt-0.5">+91 ${o.customerPhone} · <a href="https://wa.me/91${o.customerPhone}" target="_blank" class="text-[#0E9F57] underline font-sans">WhatsApp</a></p><p class="text-xs text-slate-500">#${o.orderId} · ${o.upiApp}</p></div>
-                  <div class="text-right"><p class="font-display text-lg font-extrabold">₹${o.amount}</p><p class="text-[11px] font-bold capitalize ${o.status === 'verified' ? 'text-[#0E9F57]' : o.status === 'rejected' ? 'text-red-600' : 'text-amber-700'}">${o.status}</p></div>
-                </div>
-                <div class="flex gap-2 pt-2 border-t border-slate-100">
-                  ${o.status !== 'verified' ? `<button type="button" onclick="adminUpdateOrder('${o.orderId}','verified')" class="px-3.5 py-2 rounded-lg bg-[#0E9F57] text-white text-xs font-bold cursor-pointer">Verify &amp; Unlock</button>` : ''}
-                  ${o.status !== 'rejected' ? `<button type="button" onclick="adminUpdateOrder('${o.orderId}','rejected')" class="px-3.5 py-2 rounded-lg bg-red-50 text-red-700 border border-red-200 text-xs font-bold cursor-pointer">Reject</button>` : ''}
-                </div>
-              </div>`).join('')}
-          </div>
-        ` : `
-          <form onsubmit="adminSaveSettingsForm(event)" class="overflow-y-auto flex-1 p-5 space-y-3.5 text-xs">
-            <div><label class="block font-bold mb-1">Your UPI ID</label><input id="setUpiId" value="${settings.upiId}" class="w-full px-3 py-2 rounded-lg border border-slate-300 font-mono" /></div>
-            <div><label class="block font-bold mb-1">Merchant Name</label><input id="setMerchant" value="${settings.merchantName}" class="w-full px-3 py-2 rounded-lg border border-slate-300" /></div>
-            <div><label class="block font-bold mb-1">Google Drive Link (₹140 Pack)</label><input id="setDriveMain" value="${settings.driveMainLink}" class="w-full px-3 py-2 rounded-lg border border-slate-300" /></div>
-            <div><label class="block font-bold mb-1">Google Drive Link (₹49 PYQ Add-on)</label><input id="setDrivePyq" value="${settings.drivePyqLink}" class="w-full px-3 py-2 rounded-lg border border-slate-300" /></div>
-            <div><label class="block font-bold mb-1">Telegram Bot Token (@BotFather)</label><input id="setTgToken" value="${settings.telegramBotToken}" placeholder="Optional: 7412345:AAH..." class="w-full px-3 py-2 rounded-lg border border-slate-300 font-mono" /></div>
-            <div><label class="block font-bold mb-1">Telegram Chat ID (@userinfobot)</label><input id="setTgChat" value="${settings.telegramChatId}" placeholder="Optional: 123456789" class="w-full px-3 py-2 rounded-lg border border-slate-300 font-mono" /></div>
-            <div><label class="block font-bold mb-1">ntfy Topic Name</label><input id="setNtfyTopic" value="${settings.ntfyTopic}" class="w-full px-3 py-2 rounded-lg border border-slate-300 font-mono" /></div>
-            <div><label class="block font-bold mb-1">Admin PIN</label><input id="setAdminPin" value="${settings.adminPin}" class="w-full px-3 py-2 rounded-lg border border-slate-300 font-mono" /></div>
-            <p id="adminSaveMsg" class="hidden text-[#0B6E3B] bg-[#EEFBF3] border border-emerald-200 rounded-lg px-3 py-2 font-semibold"></p>
-            <button type="submit" class="w-full py-3 rounded-xl bg-[#0E9F57] text-white font-bold text-sm cursor-pointer">Save Settings</button>
-          </form>
-        `}`;
-    }
-
     renderHeroExams(); renderHeroSubjects(); renderSubjects(); renderSamples(); renderReviews(); renderFaqs();
-    if (new URLSearchParams(window.location.search).get('admin') === '1') openAdminModal();
   </script>
 </body>
 </html>
